@@ -1009,7 +1009,72 @@ GET /Resource/
 
                     <section title="targetSchema">
                         <t>This property value is a schema that defines the expected structure of
-                        the JSON representation of the target of the link.</t>
+                        the JSON representation of the target of the link, if the target of the
+                        link is returned using JSON representation.</t>
+                    </section>
+                    
+                    <section title="mimeType">
+                        <t>The MIME media type <xref target="RFC2046">RFC 2046</xref>,
+                        that is expected to be returned when fetching this resource. This property
+                        value MAY be a media range instead, using the same pattern defined in
+                        <xref target="RFC2616">RFC 2161, section 14.1</xref> (HTTP "Accept" header).
+                        </t>
+                        
+                        <t>User agents MAY use this information to inform the interface they
+                        present to the user before the link is followed, but this information MUST
+                        NOT use this information in the interpretation of the item itself.  When
+                        deciding how to interpret data obtained through following this link, the
+                        behaviour of user agents MUST be identical whether this link property is
+                        defined or not.</t>
+                        
+                        <t>If this property's value is specified, and the link's target is to be
+                        obtained using any protocol that supports the HTTP/1.1 "Accept" header
+                        <xref target="RFC2616">RFC 2616, section 14.1</xref> (or equivalent), then
+                        user agents MAY use the value of this property to aid in the assembly of
+                        that header when making the request to the server.</t>
+                        
+                        <t>If this property's value is not specified, then the value should be
+                        taken to be "application/json".</t>
+
+                        <t>
+                            <figure>
+                                <preamble>For example, if a schema is defined:</preamble>
+                                <artwork>
+<![CDATA[
+{
+    "links": [{
+        "rel": "self",
+        "href": "/{id}/json"
+    }, {
+        "rel": "alternate",
+        "href": "/{id}/html",
+        "mimeType": "text/html"
+    }, {
+        "rel": "alternate",
+        "href": "/{id}/rss",
+        "mimeType": "application/rss+xml"
+    }, {
+        "rel": "icon",
+        "href": "{id}/icon",
+        "mimeType": "image/*"
+    }]
+}
+]]>
+                                </artwork>
+                            </figure>
+                            
+                            A suitable item described by this schema would have four links defined
+                            on it.  The link with a "rel" value of "self" would have an expected
+                            MIME type of "application/json" (the default). The two links with a
+                            "rel" value of "alternate" specify the locations of HTML and RSS
+                            versions of the current item.  The link with a "rel" value of "icon"
+                            links to an image, but is inspecific as to the exact format.
+                        </t>
+                        
+                        <t>A visual user agent displaying the item from the above example might
+                        present a button representing an RSS feed, which when pressed passed the
+                        RSS URL to an application more suited to displaying it, such as a news
+                        feed aggregator.</t>
                     </section>
 
                     <section title="Submission Link Properties">
