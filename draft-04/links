@@ -27,9 +27,8 @@
 			"type" : "string"
 		},
 		
-		"properties" : {
-			"type" : "object",
-			"additionalProperties" : {"$ref" : "http://json-schema.org/draft-04/hyper-schema#"}
+		"schema" : {
+			"$ref" : "http://json-schema.org/draft-04/hyper-schema#"
 		}
 	},
 	
