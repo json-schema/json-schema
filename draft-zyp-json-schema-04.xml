@@ -1017,8 +1017,8 @@ GET /Resource/
                         <t>The MIME media type <xref target="RFC2046">RFC 2046</xref>,
                         that is expected to be returned when fetching this resource. This property
                         value MAY be a media range instead, using the same pattern defined in
-                        <xref target="RFC2616">RFC 2161, section 14.1</xref> (HTTP "Accept" header).
-                        </t>
+                        <xref target="RFC2616">RFC 2161, section 14.1 - HTTP "Accept" header"
+                        </xref>.</t>
                         
                         <t>User agents MAY use this information to inform the interface they
                         present to the user before the link is followed, but this information MUST
@@ -1075,6 +1075,17 @@ GET /Resource/
                         present a button representing an RSS feed, which when pressed passed the
                         RSS URL to an application more suited to displaying it, such as a news
                         feed aggregator.</t>
+                    </section>
+
+                    <section title="invalidates">
+                        <t>If this property value is a string, then when the link is followed,
+                        this value should be filled out as a template and resolved to a full URI
+                        using the same method as used for the "href" property. Any stored data
+                        fetched from a URI matching this value SHOULD then be considered
+                        out-of-date. and removed from any cache.</t>
+                        
+                        <t>If this property is an array, then its entries MUST be strings, each
+                        of which is treated according to the above behaviour.</t>
                     </section>
 
                     <section title="Submission Link Properties">
