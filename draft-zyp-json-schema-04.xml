@@ -1293,7 +1293,7 @@ Content-Type: application/json; profile=/schema-for-this-data
                 </t>
             </section>
             
-            <section title="mimeType property">
+            <section title="&quot;mimeType&quot; property">
                 <t>The "mimeType" property in link definitions defines the expected format
                 of the link's target.  However, this MUST NOT be considered authoritative.
                 User agents MAY use this information to determine how they represent the link
@@ -1311,6 +1311,18 @@ Content-Type: application/json; profile=/schema-for-this-data
                 that is safe when interpreted as the correct type (for example plain text),
                 but that could be damaging if a third party were allowed to provide a
                 different interpretation (such as client-side code).</t>
+            </section>
+            
+            <section title="&quot;invalidates&quot; property">
+                <t>User agents also MUST NOT re-fetch the target of a link when the resulting
+                data is validated, unless that is according to the user's wishes.  If the
+                user's wishes are not known, then the user agent SHOULD NOT refetch the data
+                unless the target of the link is a sub-path of the URI being invalidated.
+                (See above for a discussion of how to determine if one path is a sub-path of
+                another.)</t>
+                
+                <t>This is to guard against the possibility of tricking user agents into
+                making requests on behalf of the user.</t>
             </section>
         </section>
 
