@@ -8,6 +8,8 @@
 <!ENTITY rfc3339 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3339.xml">
 <!ENTITY rfc2045 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2045.xml">
 <!ENTITY rfc5226 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.5226.xml">
+<!ENTITY rfc2046 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2046.xml">
+<!ENTITY rfc2616 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2616.xml">
 <!ENTITY iddiscovery SYSTEM "http://xml.resource.org/public/rfc/bibxml3/reference.I-D.hammer-discovery.xml">
 <!ENTITY uritemplate SYSTEM "http://xml.resource.org/public/rfc/bibxml3/reference.I-D.gregorio-uritemplate.xml">
 <!ENTITY linkheader SYSTEM "http://xml.resource.org/public/rfc/bibxml3/reference.I-D.nottingham-http-link-header.xml">
@@ -1022,10 +1024,10 @@ GET /Resource/
                         
                         <t>User agents MAY use this information to inform the interface they
                         present to the user before the link is followed, but this information MUST
-                        NOT use this information in the interpretation of the item itself.  When
-                        deciding how to interpret data obtained through following this link, the
-                        behaviour of user agents MUST be identical whether this link property is
-                        defined or not.</t>
+                        NOT use this information in the interpretation of the resulting data.
+                        When deciding how to interpret data obtained through following this link,
+                        the behaviour of user agents MUST be identical regardless of the value of
+                        the this property.</t>
                         
                         <t>If this property's value is specified, and the link's target is to be
                         obtained using any protocol that supports the HTTP/1.1 "Accept" header
@@ -1063,18 +1065,26 @@ GET /Resource/
                                 </artwork>
                             </figure>
                             
-                            A suitable item described by this schema would have four links defined
-                            on it.  The link with a "rel" value of "self" would have an expected
-                            MIME type of "application/json" (the default). The two links with a
-                            "rel" value of "alternate" specify the locations of HTML and RSS
-                            versions of the current item.  The link with a "rel" value of "icon"
-                            links to an image, but is inspecific as to the exact format.
+                            A suitable instance described by this schema would have four links
+                            defined.  The link with a "rel" value of "self" would have an
+                            expected MIME type of "application/json" (the default). The two links
+                            with a "rel" value of "alternate" specify the locations of HTML and
+                            RSS versions of the current item.  The link with a "rel" value of
+                            "icon" links to an image, but does not specify the exact format.
                         </t>
                         
                         <t>A visual user agent displaying the item from the above example might
-                        present a button representing an RSS feed, which when pressed passed the
-                        RSS URL to an application more suited to displaying it, such as a news
-                        feed aggregator.</t>
+                        present a button representing an RSS feed, which when pressed passes the
+                        calculated "href" value to an view more suited to displaying it,
+                        such as a news feed aggregator tab.</t>
+                        
+                        <t>Note that presenting the link in the above manner, or passing
+                        the URI to a news feed aggregator view does not constitute interpretation
+                        of the data, as at this point the data has not been fetched. It is 
+                        instead an interpretation of the link.  The interpretation of the
+                        data itself is performed by the news feed aggregator, which MUST reject
+                        any data that would not have also been interpreted as a news feed, had
+                        it been displayed in the main view.</t>
                     </section>
 
                     <section title="invalidates">
@@ -1379,6 +1389,7 @@ Content-Type: application/json; profile=/schema-for-this-data
             &rfc2616;
             &rfc4627;
             &rfc5226;
+            &rfc2046;
             &iddiscovery;
             &uritemplate;
             &linkheader;
