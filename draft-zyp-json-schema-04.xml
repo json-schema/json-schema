@@ -1231,16 +1231,20 @@ GET /Resource/
             <t>
                 This specification is a sub-type of the JSON format, and consequently the security
                 considerations are generally the same as <xref target="RFC4627">RFC 4627</xref>.
-                However, an additional issue is that when link relation of "self" is used to denote
-                a full representation of an object, the user agent SHOULD NOT consider the
-                representation to be the authoritative representation of the resource denoted by the
-                target URI if the target URI is not equivalent to or a sub-path of the the URI used
-                to request the resource representation which contains the target URI with the "self"
-                link.
-
-                <figure>
-                    <preamble>For example, if a hyper schema was defined:</preamble>
-                    <artwork>
+                However, there are additional security concerns when using the hyperlink definitions.
+            <t>
+            
+            <section title="&quot;self&quot; links">
+                <t>
+                    When link relation of "self" is used to denote a full representation of an object,
+                    the user agent SHOULD NOT consider the representation to be the authoritative
+                    representation of the resource denoted by the target URI if the target URI is not
+                    equivalent to or a sub-path of the the URI used to request the resource
+                    representation which contains the target URI with the "self" link.
+    
+                    <figure>
+                        <preamble>For example, if a hyper schema was defined:</preamble>
+                        <artwork>
 <![CDATA[
 {
     "links": [{
@@ -1249,21 +1253,21 @@ GET /Resource/
     }]
 }
 ]]>
-                    </artwork>
-                </figure>
-
-                <figure>
-                    <preamble>And a resource was requested from somesite.com:</preamble>
-                    <artwork>
+                        </artwork>
+                    </figure>
+    
+                    <figure>
+                        <preamble>And a resource was requested from somesite.com:</preamble>
+                        <artwork>
 <![CDATA[
 GET /foo/
 ]]>
-                    </artwork>
-                </figure>
-
-                <figure>
-                    <preamble>With a response of:</preamble>
-                    <artwork>
+                        </artwork>
+                    </figure>
+    
+                    <figure>
+                        <preamble>With a response of:</preamble>
+                        <artwork>
 <![CDATA[
 Content-Type: application/json; profile=/schema-for-this-data
 
@@ -1284,9 +1288,30 @@ Content-Type: application/json; profile=/schema-for-this-data
         authoritative representation"
 }]
 ]]>
-                    </artwork>
-                </figure>
-            </t>
+                        </artwork>
+                    </figure>
+                </t>
+            </section>
+            
+            <section title="mimeType property">
+                <t>The "mimeType" property in link definitions defines the expected format
+                of the link's target.  However, this MUST NOT be considered authoritative.
+                User agents MAY use this information to determine how they represent the link
+                or where to display it (for example hover-text, opening in a new tab).
+                If user agents decide to pass the link to an external program, they SHOULD
+                first verify that the data is of a type that would normally be passed to that
+                external program.</t>
+                
+                <t>When choosing how to interpret data, the type information
+                provided by the server (or inferred from the filename, or any other usual
+                method) MUST be the only consideration, and the "mimeType" property of
+                the link MUST NOT be used.</t>
+                
+                <t>This is to guard against situations where a source is providing data
+                that is safe when interpreted as the correct type (for example plain text),
+                but that could be damaging if a third party were allowed to provide a
+                different interpretation (such as client-side code).</t>
+            </section>
         </section>
 
         <section title="IANA Considerations">
