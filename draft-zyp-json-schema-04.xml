@@ -1242,7 +1242,7 @@ GET /Resource/
                 This specification is a sub-type of the JSON format, and consequently the security
                 considerations are generally the same as <xref target="RFC4627">RFC 4627</xref>.
                 However, there are additional security concerns when using the hyperlink definitions.
-            <t>
+            </t>
             
             <section title="&quot;self&quot; links">
                 <t>
