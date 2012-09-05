@@ -8,6 +8,8 @@
 <!ENTITY rfc3339 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3339.xml">
 <!ENTITY rfc2045 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2045.xml">
 <!ENTITY rfc5226 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.5226.xml">
+<!ENTITY rfc2046 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2046.xml">
+<!ENTITY rfc2616 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2616.xml">
 <!ENTITY iddiscovery SYSTEM "http://xml.resource.org/public/rfc/bibxml3/reference.I-D.hammer-discovery.xml">
 <!ENTITY uritemplate SYSTEM "http://xml.resource.org/public/rfc/bibxml3/reference.I-D.gregorio-uritemplate.xml">
 <!ENTITY linkheader SYSTEM "http://xml.resource.org/public/rfc/bibxml3/reference.I-D.nottingham-http-link-header.xml">
@@ -1009,7 +1011,91 @@ GET /Resource/
 
                     <section title="targetSchema">
                         <t>This property value is a schema that defines the expected structure of
-                        the JSON representation of the target of the link.</t>
+                        the JSON representation of the target of the link, if the target of the
+                        link is returned using JSON representation.</t>
+                    </section>
+                    
+                    <section title="mimeType">
+                        <t>The MIME media type <xref target="RFC2046">RFC 2046</xref>,
+                        that is expected to be returned when fetching this resource. This property
+                        value MAY be a media range instead, using the same pattern defined in
+                        <xref target="RFC2616">RFC 2161, section 14.1 - HTTP "Accept" header"
+                        </xref>.</t>
+                        
+                        <t>User agents MAY use this information to inform the interface they
+                        present to the user before the link is followed, but this information MUST
+                        NOT use this information in the interpretation of the resulting data.
+                        When deciding how to interpret data obtained through following this link,
+                        the behaviour of user agents MUST be identical regardless of the value of
+                        the this property.</t>
+                        
+                        <t>If this property's value is specified, and the link's target is to be
+                        obtained using any protocol that supports the HTTP/1.1 "Accept" header
+                        <xref target="RFC2616">RFC 2616, section 14.1</xref> (or equivalent), then
+                        user agents MAY use the value of this property to aid in the assembly of
+                        that header when making the request to the server.</t>
+                        
+                        <t>If this property's value is not specified, then the value should be
+                        taken to be "application/json".</t>
+
+                        <t>
+                            <figure>
+                                <preamble>For example, if a schema is defined:</preamble>
+                                <artwork>
+<![CDATA[
+{
+    "links": [{
+        "rel": "self",
+        "href": "/{id}/json"
+    }, {
+        "rel": "alternate",
+        "href": "/{id}/html",
+        "mimeType": "text/html"
+    }, {
+        "rel": "alternate",
+        "href": "/{id}/rss",
+        "mimeType": "application/rss+xml"
+    }, {
+        "rel": "icon",
+        "href": "{id}/icon",
+        "mimeType": "image/*"
+    }]
+}
+]]>
+                                </artwork>
+                            </figure>
+                            
+                            A suitable instance described by this schema would have four links
+                            defined.  The link with a "rel" value of "self" would have an
+                            expected MIME type of "application/json" (the default). The two links
+                            with a "rel" value of "alternate" specify the locations of HTML and
+                            RSS versions of the current item.  The link with a "rel" value of
+                            "icon" links to an image, but does not specify the exact format.
+                        </t>
+                        
+                        <t>A visual user agent displaying the item from the above example might
+                        present a button representing an RSS feed, which when pressed passes the
+                        calculated "href" value to an view more suited to displaying it,
+                        such as a news feed aggregator tab.</t>
+                        
+                        <t>Note that presenting the link in the above manner, or passing
+                        the URI to a news feed aggregator view does not constitute interpretation
+                        of the data, as at this point the data has not been fetched. It is 
+                        instead an interpretation of the link.  The interpretation of the
+                        data itself is performed by the news feed aggregator, which MUST reject
+                        any data that would not have also been interpreted as a news feed, had
+                        it been displayed in the main view.</t>
+                    </section>
+
+                    <section title="invalidates">
+                        <t>If this property value is a string, then when the link is followed,
+                        this value should be filled out as a template and resolved to a full URI
+                        using the same method as used for the "href" property. Any stored data
+                        fetched from a URI matching this value SHOULD then be considered
+                        out-of-date. and removed from any cache.</t>
+                        
+                        <t>If this property is an array, then its entries MUST be strings, each
+                        of which is treated according to the above behaviour.</t>
                     </section>
 
                     <section title="Submission Link Properties">
@@ -1155,16 +1241,20 @@ GET /Resource/
             <t>
                 This specification is a sub-type of the JSON format, and consequently the security
                 considerations are generally the same as <xref target="RFC4627">RFC 4627</xref>.
-                However, an additional issue is that when link relation of "self" is used to denote
-                a full representation of an object, the user agent SHOULD NOT consider the
-                representation to be the authoritative representation of the resource denoted by the
-                target URI if the target URI is not equivalent to or a sub-path of the the URI used
-                to request the resource representation which contains the target URI with the "self"
-                link.
-
-                <figure>
-                    <preamble>For example, if a hyper schema was defined:</preamble>
-                    <artwork>
+                However, there are additional security concerns when using the hyperlink definitions.
+            </t>
+            
+            <section title="&quot;self&quot; links">
+                <t>
+                    When link relation of "self" is used to denote a full representation of an object,
+                    the user agent SHOULD NOT consider the representation to be the authoritative
+                    representation of the resource denoted by the target URI if the target URI is not
+                    equivalent to or a sub-path of the the URI used to request the resource
+                    representation which contains the target URI with the "self" link.
+    
+                    <figure>
+                        <preamble>For example, if a hyper schema was defined:</preamble>
+                        <artwork>
 <![CDATA[
 {
     "links": [{
@@ -1173,21 +1263,21 @@ GET /Resource/
     }]
 }
 ]]>
-                    </artwork>
-                </figure>
-
-                <figure>
-                    <preamble>And a resource was requested from somesite.com:</preamble>
-                    <artwork>
+                        </artwork>
+                    </figure>
+    
+                    <figure>
+                        <preamble>And a resource was requested from somesite.com:</preamble>
+                        <artwork>
 <![CDATA[
 GET /foo/
 ]]>
-                    </artwork>
-                </figure>
-
-                <figure>
-                    <preamble>With a response of:</preamble>
-                    <artwork>
+                        </artwork>
+                    </figure>
+    
+                    <figure>
+                        <preamble>With a response of:</preamble>
+                        <artwork>
 <![CDATA[
 Content-Type: application/json; profile=/schema-for-this-data
 
@@ -1208,9 +1298,42 @@ Content-Type: application/json; profile=/schema-for-this-data
         authoritative representation"
 }]
 ]]>
-                    </artwork>
-                </figure>
-            </t>
+                        </artwork>
+                    </figure>
+                </t>
+            </section>
+            
+            <section title="&quot;mimeType&quot; property">
+                <t>The "mimeType" property in link definitions defines the expected format
+                of the link's target.  However, this MUST NOT be considered authoritative.
+                User agents MAY use this information to determine how they represent the link
+                or where to display it (for example hover-text, opening in a new tab).
+                If user agents decide to pass the link to an external program, they SHOULD
+                first verify that the data is of a type that would normally be passed to that
+                external program.</t>
+                
+                <t>When choosing how to interpret data, the type information
+                provided by the server (or inferred from the filename, or any other usual
+                method) MUST be the only consideration, and the "mimeType" property of
+                the link MUST NOT be used.</t>
+                
+                <t>This is to guard against situations where a source is providing data
+                that is safe when interpreted as the correct type (for example plain text),
+                but that could be damaging if a third party were allowed to provide a
+                different interpretation (such as client-side code).</t>
+            </section>
+            
+            <section title="&quot;invalidates&quot; property">
+                <t>User agents also MUST NOT re-fetch the target of a link when the resulting
+                data is validated, unless that is according to the user's wishes.  If the
+                user's wishes are not known, then the user agent SHOULD NOT refetch the data
+                unless the target of the link is a sub-path of the URI being invalidated.
+                (See above for a discussion of how to determine if one path is a sub-path of
+                another.)</t>
+                
+                <t>This is to guard against the possibility of tricking user agents into
+                making requests on behalf of the user.</t>
+            </section>
         </section>
 
         <section title="IANA Considerations">
@@ -1266,6 +1389,7 @@ Content-Type: application/json; profile=/schema-for-this-data
             &rfc2616;
             &rfc4627;
             &rfc5226;
+            &rfc2046;
             &iddiscovery;
             &uritemplate;
             &linkheader;
