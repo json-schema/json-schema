@@ -168,7 +168,9 @@ Schema to build hyperlinks into parts of that JSON data.</dd>
 <h3>Example summary</h3>
 <p>The above example is by no means definitive of all the types of data JSON schema can define. For more definitive information see the <a href="#definitions">full standard draft</a>.</p>
 
-<p>As a final example, here's a spec for an array of products, with the products having a new <em>warehouseLocation</em> field for where the warehouse that stores them is geographically located.</p>
+<p>As a final example, here's a spec for an array of products, with the products having 2 new properties. The first is a <em>dimensions</em> property for the size of the product, and the second is a <em>warehouseLocation</em> field for where the warehouse that stores them is geographically located.</p>
+
+<p>And also, since JSON Schema defines a reference schema for a geographic location, instead of coming up with our own, we'll reference the <a href="http://json-schema.org/geo">canonical one</a>.</p>
 
 <p>Set of products:</p>
 <pre><code>[
@@ -177,6 +179,11 @@ Schema to build hyperlinks into parts of that JSON data.</dd>
     "name": "An ice sculpture",
     "price": 12.50,
     "tags": ["cold", "ice"],
+    "dimensions": {
+      "length": 7.0,
+      "width": 12.0,
+      "height": 9.5
+    }
     "warehouseLocation": {
       "latitude": -78.75,
       "longitude": 20.4
@@ -186,6 +193,11 @@ Schema to build hyperlinks into parts of that JSON data.</dd>
     "id": 3,
     "name": "A blue mouse",
     "price": 25.50,
+    "dimensions": {
+      "length": 3.1,
+      "width": 1.0,
+      "height": 1.0
+    }
     "warehouseLocation": {
       "latitude": 54.4,
       "longitude": -32.7
@@ -224,13 +236,19 @@ Schema to build hyperlinks into parts of that JSON data.</dd>
           "type": "string"
         }
       },
-      "warehouseLocation": {
-        "description": "The location of the warehouse the product is stored at",
+      "dimensions": {
         "type": "object",
         "properties": {
-          "latitude": { "type": "number" },
-          "longitude": { "type": "number" }
+          "length": { "type": number, "required": true },
+          "width": { "type": number, "required": true },
+          "height": { "type": number, "required": true }
         }
+      },
+      "warehouseLocation": {
+        "description": "The location of the warehouse the product is stored at",
+        // JSON schema provides a reference schema for geographic locations, so
+        // let's just use that
+        "$ref": "http: //json-schema.org/geo"
       }
     }
   }
