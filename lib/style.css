@@ -1,0 +1,12 @@
+#review-volumes dt,
+#schemas-list  dt {
+    width: 200px;
+}
+#review-volumes dd,
+#schemas-list  dd {
+    margin-left: 207px;
+    margin-right: 100px;
+}
+#schemas-list dd {
+    margin-right: 20px;
+}
