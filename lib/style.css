@@ -22,3 +22,9 @@
 #schemas-list dd {
     margin-right: 20px;
 }
+img.ribbon {
+    position: fixed;
+    top: 0;
+    left: 0;
+    border: 0;
+}
