@@ -41,14 +41,65 @@ Schema to build hyperlinks into parts of that JSON data.</dd>
 <p>Let's pretend we're interacting with a JSON based product catalog. This catalog has a...
     continue to the <a href="examples.html">examples page</a> to read more...</p>
 
-<h2 id="definitions">JSON Schema standard draft</h2>
+<h2 id="definitions">JSON Schema standards route</h2>
 
-<p>The latest IETF published draft is <a id="link-draft-zyp-json-schema-03"
-href="http://tools.ietf.org/html/draft-zyp-json-schema-03">v3</a>. While not yet published,
-<a id="link-github-json-schema"  href="https://github.com/json-schema/json-schema">v4</a>
- of the draft is being updated on github.</p>
+<p>The last IETF published draft was <a id="link-draft-zyp-json-schema-03"
+href="http://tools.ietf.org/html/draft-zyp-json-schema-03">v3</a> which expired on
+May 26, 2011 as is the nature of drafts.
+    In response to a request by two json schema hacktivists, after creating the
+    <a id="link-github-json-schema" href="https://github.com/json-schema">json-schema project</a>
+    on github in August 2012, Kris Zyp and Gary Court,
+    with their blessings bestowed, sponsored the <a href="#">json-schema.org</a> domain
+    and the <a id="link-google-groups2" href="https://groups.google.com/forum/#!forum/json-schema">
+    json-schema google group</a> to the json-schema community, symbolizing a passing of the
+    flame to the next torch bearers. Now committed to see json-schema specification
+    through to official RFC acceptance once and for all.</p>
 
-<p>JSON Schema also uses two other specifications:</p>
+<p><strong>The goal</strong>, to realize the official json schema specification to RFC acceptance.</p>
+<p><strong>The strategy</strong>, a first time right approach, by merging the existing community under a
+    single banner to encourage and facilitate involvement as a combined team effort;
+    frequent release of previews for public review and to reach majority consensus,
+    akin to the official IETF process and; the combined specification divided into
+    manageable and separate bite sized volumes with specific focus and context to
+    simplify execution, consumption and acceptance driven in parallel by volunteers
+    with particular interest and buy-in there in.</p>
+
+<p>We would love to hear your thoughts/suggestions/ideas/concerns about our strategy, please
+    start a discussion on <a id="link-issues-strategy" href="https://github.com/json-schema/json-schema/issues">
+    the issue tracker</a> and meet your fellow json-schema aficionados.</p>
+
+<p>The following volumes have already received active attention. Once we are happy that you
+are happy then hopefully the official submission would be no more than a formality.</p>
+
+ <dl id="review-volumes" class="dl-horizontal span8">
+     <dt><a id="link-props-core"
+href="https://raw.github.com/json-schema/json-schema/next/proposals/json-schema-core.txt">
+         json-schema-core</a>
+     </dt><dd> Introduces JSON schema, states purpose, defines its IANA media type, the schema
+     document and main keywords, nesting and relations of schemas, its primitive data types
+     and their equality definitions. Additionally it introduces the separate document approach and
+     sets formal guidelines.</dd>
+     <dt><a id="link-props-validate"
+href="https://raw.github.com/json-schema/json-schema/next/proposals/json-schema-validation.txt">
+         json-schema-validation</a>
+     </dt><dd> Introduces schema validation and establishes interoperability guidelines. Specifies
+     the validation related keywords specific to each primitive data type, includes meta
+     information, semantics and relationships.</dd>
+     <dt><a id="link-props-hyper"
+            href="https://raw.github.com/json-schema/json-schema/next/proposals/json-schema-hypermedia.txt">
+         json-schema-hypermedia</a>
+     </dt><dd>Introduces the concept of hypermedia and defines its application on JSON data. It encompasses
+     links, relation types, content types and includes data submission guidelines.</dd>
+</dl>
+
+<p> Each preview release is accompanied by a release notification on <a id="link-issues-preview"
+    href="https://github.com/json-schema/json-schema/issues">the issue tracker</a> which is where you are
+    given the opportunity to raise any concerns, point out discrepancies or similar fallacies, identify
+    missing, incomplete or ambiguity and it cannot be stressed enough just how important your involvement
+    is to our inevitable success or forever hold your peace, instead.
+</p>
+
+<p>JSON Schema also uses two other specifications, both currently still under review by the IETF:</p>
 
 <ul>
 <li><a href="http://tools.ietf.org/html/draft-pbryan-zyp-json-ref-02">JSON
