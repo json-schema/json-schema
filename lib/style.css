@@ -1,3 +1,15 @@
+#title {
+    background-image: url(https://secure.gravatar.com/avatar/ebeee14045a5b78e7c70465794732a14?s=100);
+    background-position: left;
+    background-repeat: no-repeat;
+    padding-left: 100px;
+    padding-top: 80px;
+    vertical-align: text-bottom;
+}
+#link-title {
+    text-decoration: none;
+    color: #000;
+}
 #review-volumes dt,
 #schemas-list  dt {
     width: 200px;
