@@ -2,25 +2,20 @@
 <head>
     <title>JSON Schema</title>
     <link href="lib/bootstrap-min.css" rel="stylesheet">
-    <script type="text/javascript">
-        var _gaq = _gaq || [];
-        var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
-        _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
-        _gaq.push(['_setAccount', 'UA-37169005-1']);
-        _gaq.push(['_trackPageview']);
-        (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-    </script>
+    <link href="lib/style.css" rel="stylesheet">
 </head>
 <body>
+<a id="link-ribbon" href="https://github.com/json-schema/json-schema">
+    <img title="Get involved and leave your mark. Contribute to the json-schema project on GitHub."
+         class="ribbon" src="lib/contribute-on-github.png" alt="Fork me on GitHub">
+</a>
 <div class="container">
   <div class="row">
      <div class="span8">
   <div class="page-header">
-<h1>JSON Schema</h1>
+<a id="link-title" href="http://json-schema.org">
+<h1 id="title">JSON Schema</h1>
+</a>
   </div>
   </div>
   </div>
@@ -29,8 +24,9 @@
 
 <h2>What is JSON Schema</h2>
 
-<p>JSON Schema is a proposed Internet draft defining a JSON media type
-(<tt>application/schema+json</tt>) with the following goals:</p>
+<p>JSON Schema is a JSON based format for describing JSON data. JSON Schema is to JSON as XSD is to XML.</p>
+
+<p>JSON Schema is a proposed Internet draft defining a JSON media type (application/schema+json) with the following goals:</p>
 
 <dl class="dl-horizontal">
 <dt>Validation</dt> <dd>You can use JSON Schema to validate your JSON data.</dd>
@@ -40,25 +36,89 @@ interaction.</dd>
 <dt>Hyperlinking</dt> <dd>You can pair your JSON data with the defining JSON
 Schema to build hyperlinks into parts of that JSON data.</dd>
 </dl>
+<h2>JSON Schema by example</h2>
 
-<h2>Existing IETF drafts</h2>
+<p>Let's pretend we're interacting with a JSON based product catalog. This catalog has a...
+    continue to the <a href="examples.html">examples page</a> to read more...</p>
 
-<p>The latest IETF published draft to date can be found <a id="link-draft-zyp-json-schema-03"
-href="http://tools.ietf.org/html/draft-zyp-json-schema-03">here</a>. It is in
-the process of being updated.</p>
+<h2 id="definitions">JSON Schema standards route</h2>
 
-<p>JSON Schema also uses two other specifications:</p>
+<p>The last IETF published draft was <a id="link-draft-zyp-json-schema-03"
+href="http://tools.ietf.org/html/draft-zyp-json-schema-03">v3</a> which expired on
+May 26, 2011 as is the nature of drafts.
+    In response to a request by two json schema hacktivists, after creating the
+    <a id="link-github-json-schema" href="https://github.com/json-schema">json-schema project</a>
+    on github in August 2012, Kris Zyp and Gary Court,
+    with their blessings bestowed, sponsored the <a href="#">json-schema.org</a> domain
+    and the <a id="link-google-groups2" href="https://groups.google.com/forum/#!forum/json-schema">
+    json-schema google group</a> to the json-schema community, symbolizing a passing of the
+    flame to the next torch bearers. Now committed to see json-schema specification
+    through to official RFC acceptance once and for all.</p>
+
+<p><strong>The goal</strong>, to realize the official json schema specification to RFC acceptance.</p>
+<p><strong>The strategy</strong>, a first time right approach, by merging the existing community under a
+    single banner to encourage and facilitate involvement as a combined team effort;
+    frequent release of previews for public review and to reach majority consensus,
+    akin to the official IETF process and; the combined specification divided into
+    manageable and separate bite sized volumes with specific focus and context to
+    simplify execution, consumption and acceptance driven in parallel by volunteers
+    with particular interest and buy-in there in.</p>
+
+<p>We would love to hear your thoughts/suggestions/ideas/concerns about our strategy, please
+    start a discussion on <a id="link-issues-strategy" href="https://github.com/json-schema/json-schema/issues">
+    the issue tracker</a> and meet your fellow json-schema aficionados.</p>
+
+<p>The following volumes have already received active attention. Once we are happy that you
+are happy then hopefully the official submission would be no more than a formality.</p>
+
+ <dl id="review-volumes" class="dl-horizontal span8">
+     <dt><a id="link-props-core"
+href="https://raw.github.com/json-schema/json-schema/next/proposals/json-schema-core.txt">
+         json-schema-core</a>
+     </dt><dd> Introduces JSON schema, states purpose, defines its IANA media type, the schema
+     document and main keywords, nesting and relations of schemas, its primitive data types
+     and their equality definitions. Additionally it introduces the separate document approach and
+     sets formal guidelines.</dd>
+     <dt><a id="link-props-validate"
+href="https://raw.github.com/json-schema/json-schema/next/proposals/json-schema-validation.txt">
+         json-schema-validation</a>
+     </dt><dd> Introduces schema validation and establishes interoperability guidelines. Specifies
+     the validation related keywords specific to each primitive data type, includes meta
+     information, semantics and relationships.</dd>
+     <dt><a id="link-props-hyper"
+            href="https://raw.github.com/json-schema/json-schema/next/proposals/json-schema-hypermedia.txt">
+         json-schema-hypermedia</a>
+     </dt><dd>Introduces the concept of hypermedia and defines its application on JSON data. It encompasses
+     links, relation types, content types and includes data submission guidelines.</dd>
+</dl>
+
+<p> Each preview release is accompanied by a release notification on <a id="link-issues-preview"
+    href="https://github.com/json-schema/json-schema/issues">the issue tracker</a> which is where you are
+    given the opportunity to raise any concerns, point out discrepancies or similar fallacies, identify
+    missing, incomplete or ambiguity and it cannot be stressed enough just how important your involvement
+    is to our inevitable success or forever hold your peace, instead.
+</p>
+
+<p>JSON Schema also uses two other specifications, both currently still under review by the IETF:</p>
 
 <ul>
-<li><a id="link-draft-pbryan-zyp-json-ref-02" href="http://tools.ietf.org/html/draft-pbryan-zyp-json-ref-02">JSON
-Reference</a>;</li>
-<li><a id="link-draft-ietf-appsawg-json-pointer-03" href="http://tools.ietf.org/html/draft-ietf-appsawg-json-pointer-03">JSON
-Pointer</a>.</li>
+<li><a href="http://tools.ietf.org/html/draft-pbryan-zyp-json-ref-02">JSON
+Reference</a></li>
+<li><a href="http://tools.ietf.org/html/draft-ietf-appsawg-json-pointer-03">JSON
+Pointer</a></li>
 </ul>
 
-<h2>Implementations</h2>
+<h2>JSON Schema based Implementation libraries</h2>
 
-<p>A list of JSON Schema implementations can be found <a id="link-implementations" href="implementations.html">here</a>.</p>
+<p>We maintain a convenience <a id="link-implementations" href="implementations.html">list of JSON Schema based solutions</a>
+strategically as indisputable proof of real world implementations in support of the necessity for a standards specification
+doubling as a one stop shop for all things JSON Schema clearly highlighting the indicators one would normally use to
+assess the health of a project. (work in progress)  </p>
+
+<p>Ideally this simple artifact would become an inspiration for solution developers to improve the quality of
+their products by providing a commonsensical and easily obtainable checklist of mini milestones for excellence. Not only
+a measurable non-biased comparison ranking but a notable raise of the acceptance bar right across the board
+<a id="link-unity-list" href="implementations.html#unity-list">read more...</a></p>
 
 <h2>Discussion</h2>
 
@@ -69,34 +129,52 @@ group</a>.</p>
 <h2>Contributing</h2>
 
 <p>JSON Schema as a whole (this site, the specifications, and related projects)
-can be found on <a id="link-github" href="https://github.com/json-schema/">GitHub</a>.
-Feature/pull requests are welcome.</p>
+can be found on <a id="link-github" href="https://github.com/json-schema/">GitHub</a>.</p>
+<p>There are many ways to get involved:</p>
+<ul>
+    <li>Start a new discussion on the issue tracker.</li>
+    <li>Participate in discussion and share your valuable opinion.</li>
+    <li>Review and comment on the preview releases.</li>
+    <li>Motivate encourage lend moral support.</li>
+    <li>Discover unlisted implementations and see them added te the list.</li>
+    <li>Assist automation of variable comparison indicators on implementation list.</li>
+    <li>Identify additional comparison indicators on implementation list.</li>
+    <li>Assist automation of variable comparison indicators on implementation list.</li>
+    <li>Provide additional content for the website.</li>
+    <li>Assist with research tasks for comparison and cross referencing.</li>
+    <li><a id="link-donation" href="donation.html">Make a donation</a>.</li>
+</ul>
 
-<h2>Schemas</h2>
+<h2>Reference schemas</h2>
 <p>The following are schemas that are available for referencing (more to come):
-<dl class="dl-horizontal span8">
-<dt><a id="link-schema-meta" href="schema">Core Meta-Schema</a> </dt><dd> This is the meta-schema
-definition for schemas themselves (the type/validation part of schemas).</dd>
-<dt><a id="link-schema-hyper" href="hyper-schema">Hyper Meta-Schema</a> </dt><dd> This is the extended
-full meta-schema definition for schemas with link definitions (hyper
+<dl id="schemas-list" class="dl-horizontal span8">
+<dt><a id="link-core-schema" href="json-core-schema.html">Core Schema</a> </dt><dd> The proposed core schema currently in review.</dd>
+<dt><a id="link-schema-meta" href="json-meta-schema.html">Core Meta-Schema</a> </dt><dd> This is the meta-schema
+definition as it stood at draft 03 submission and currently in active use, for schemas themselves (the type/validation part of schemas).</dd>
+<dt><a id="link-schema-hyper" href="json-hyper-schema.html">Hypermedia Meta-Schema</a> </dt><dd> This is the extended
+full meta-schema definition for schemas with link definitions (hypermedia
 schemas).</dd>
-<dt><a id="link-schema-json-ref" href="json-ref">JSON Referencing</a> </dt><dd> This is the schema that
+<dt><a id="link-schema-hyper-links" href="json-links-schema.html">Hypermedia Links Meta-Schema</a> </dt><dd> The schema definition which
+defines schemas defining links as used with hypermedia schemas.</dd>
+<dt><a id="link-schema-json-ref" href="json-ref.html">JSON Referencing</a> </dt><dd> This is the schema that
 defines a generic linking mechanism called JSON referencing (which is used by
 the meta-schema for links).</dd>
-<dt><a id="link-schema-interfaces" href="interfaces">JSON Schema Interfaces</a> </dt><dd> This is the
+<dt><a id="link-schema-interfaces" href="json-schema-interfaces.html">JSON Schema Interfaces</a> </dt><dd> This is the
 meta-schema definition for schemas which define class-style method interfaces
 for programming languages.</dd>
-<dt><a id="link-schema-geo" href="geo">Geographic Coordinate</a></dt><dd>&nbsp;</dd>
-<dt><a id="link-schema-card" href="card">Card</a> </dt><dd> A schema for microformat style
+<dt><a id="link-schema-geo" href="json-geo-schema.html">Geographic Coordinate</a></dt><dd>A schema definition for
+geographical coordinates.</dd>
+<dt><a id="link-schema-card" href="json-card-schema.html">Card</a> </dt><dd> A schema for microformat style
 representation of a person, company, organization, or place.</dd>
-<dt><a id="link-schema-calendar" href="calendar">Calendar</a> </dt><dd> A schema for microformat style
+<dt><a id="link-schema-calendar" href="json-calendar-schema.html">Calendar</a> </dt><dd> A schema for microformat style
 representation of an event.</dd>
-<dt><a id="link-schema-address" href="address">Address</a> </dt><dd> A schema for microformat style
+<dt><a id="link-schema-address" href="json-address-schema.html">Address</a> </dt><dd> A schema for microformat style
 representation of an address.</dd>
 </dl>
 </p>
   </div>
   </div>
 </div>
+<script src="lib/common.js"></script>
 </body>
 </html>

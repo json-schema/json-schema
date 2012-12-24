@@ -3,30 +3,20 @@
 <head>
     <title>JSON Schema Implementations</title>
     <link href="lib/bootstrap-min.css" rel="stylesheet">
-    <script type="text/javascript">
-
-        var _gaq = _gaq || [];
-        var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
-        _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
-        _gaq.push(['_setAccount', 'UA-37169005-1']);
-        _gaq.push(['_trackPageview']);
-
-        (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-
-    </script>
+    <link href="lib/style.css" rel="stylesheet">
 </head>
 
 <body>
+<a id="link-ribbon" href="https://github.com/json-schema/json-schema">
+    <img title="Get involved and leave your mark. Contribute to the json-schema project on GitHub."
+         class="ribbon" src="lib/contribute-on-github.png" alt="Fork me on GitHub">
+</a>
 
 <div class="container">
     <div class="row">
         <div class="span10">
             <div class="page-header">
-                <h1>JSON Schema Implementations</h1>
+                <h1>JSON Schema based implementations</h1>
             </div> <!-- class="page-header" -->
         </div> <!-- class="span10" -->
     </div> <!-- class="row" -->
@@ -37,90 +27,276 @@
 <h2>Preliminary note</h2>
 
 <p>Implementations below are written in different languages, and support part, or all, of the
-specification. This page only lists the implementaions and links to them, and does not specify the
-level of JSON Schema support.</p>
+specification. These projects are not affiliated with json-schema.org nor do we make any claim to their
+usability for any particular purpose. This index purely serves as a record of JSON Schema adoption,
+purposed primarily to motivate the need for an accepted standards specification.</p>
 
-<p>Implementations below are classified based on their programming language.  When known, the
-license of the project is also mentioned.</p>
+<p>The implementations are classified by type of application, programming language, applicable license and version
+of JSON Schema in use and is sorted by application type, language and ordered by most recently updated.</p>
+
+<p>Version numbers are indicative only and impractical for comparison, projects frequently updated are indications
+of good health and would suggest that support may be readily available.</p>
+
+<h3>Type legend:</h3>
+The type of JSON Schema application distinguishes the usability of a library to be applicable for a specific purpose.
+The following descriptions serve to clarify these distinctions.
+
+<dl class="dl-horizontal">
+    <dt>Validation</dt> <dd>The library applies a JSON schema definition to JSON data and reports on any constraint
+    violations that may be present.</dd>
+    <dt>Documentation</dt><dd>The library facilitates the creation of human readable documentation based on the
+    definitions contained in a JSON Schema document.</dd>
+    <dt>Generation</dt><dd>The library facilitates the generation or creation of JSON Schema documents in some way.</dd>
+</dl>
+
+<p>With your help we can make this the de facto list of JSON Schema based solutions available. Please leave notice
+on <a id="impl-link-issues" href="https://github.com/json-schema/json-schema/issues">the issue tracker</a> of
+any additional projects you may come across not yet listed. Thank you for your continued participation. </p>
 
             <div class="row">
-                <div style="padding-left:40px; margin-right:-40px;" class="span4">
+                <div class="span8">
+                    <table id="library-table" class="tablesorter table table-condensed table-hover table-bordered">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>License</th>
+                            <th>Language</th>
+                            <th>Type</th>
+                            <th>Schema Version</th>
+                            <th>Latest Version</th>
+                            <th>Last Activity</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="library-row" data-url="https://github.com/netmail-open/wjelement">
+                            <td>WJElement</td>
+                            <td>LGPLv3</td>
+                            <td>C</td>
+                            <td>Validation</td>
+                            <td>draft v3</td>
+                            <td>dev</td>
+                            <td>2012/12/20</td>
+                        </tr>
+                        <tr class="library-row" data-url="https://github.com/fge/json-schema-validator">
+                            <td>json-schema-validator</td>
+                            <td>LGPLv3</td>
+                            <td>JAVA</td>
+                            <td>Validation</td>
+                            <td>draft v3</td>
+                            <td>1.4.1</td>
+                            <td>2012/12/21</td>
+                        </tr>
+                        <tr class="library-row" data-url="http://james.newtonking.com/projects/json-net.aspx">
+                            <td>Json.NET</td>
+                            <td>MIT</td>
+                            <td>.Net</td>
+                            <td>Validation</td>
+                            <td>draft v3</td>
+                            <td>4.5R11</td>
+                            <td>2012/11/20</td>
+                        </tr>
+                        <tr class="library-row" data-url="https://github.com/raulbajales/Frigga">
+                            <td>frigga</td>
+                            <td>MIT</td>
+                            <td>ActionScript 3</td>
+                            <td>Validation</td>
+                            <td>draft v3</td>
+                            <td>dev</td>
+                            <td>2010/11/29</td>
+                        </tr>
+                        <tr class="library-row" data-url="https://github.com/timjb/aeson-schema">
+                            <td>aeson-schema</td>
+                            <td>MIT</td>
+                            <td>Haskell</td>
+                            <td>Validation</td>
+                            <td>draft v3</td>
+                            <td>v0.2.0.0</td>
+                            <td>2012/10/10</td>
+                        </tr>
+                        <tr class="library-row" data-url="https://github.com/Julian/jsonschema">
+                            <td>jsonschema</td>
+                            <td>MIT</td>
+                            <td>Python</td>
+                            <td>Validation</td>
+                            <td>draft v3</td>
+                            <td>0.8dev</td>
+                            <td>2012/12/02</td>
+                        </tr>
+                        <tr class="library-row" data-url="https://github.com/zyga/json-schema-validator">
+                            <td>json-schema-validator</td>
+                            <td>LGPLv3</td>
+                            <td>Python</td>
+                            <td>Validation</td>
+                            <td>draft v3</td>
+                            <td>2.3</td>
+                            <td>2012/05/08</td>
+                        </tr>
+                        <tr class="library-row" data-url="https://github.com/google/autoparse">
+                            <td>autoparse</td>
+                            <td>ASL2.0</td>
+                            <td>Ruby</td>
+                            <td>Validation</td>
+                            <td>draft v3</td>
+                            <td>0.3.2</td>
+                            <td>2012/08/30</td>
+                        </tr>
+                        <tr class="library-row" data-url="https://github.com/Constellation/ruby-jsonchema">
+                            <td>ruby-jsonschema</td>
+                            <td>MIT</td>
+                            <td>Ruby</td>
+                            <td>Validation</td>
+                            <td>draft v3</td>
+                            <td>2.0.2</td>
+                            <td>2012/02/28</td>
+                        </tr>
+                        <tr class="library-row" data-url="https://github.com/hoxworth/json-schema">
+                            <td>json-schema</td>
+                            <td>MIT</td>
+                            <td>Ruby</td>
+                            <td>Validation</td>
+                            <td>draft v3</td>
+                            <td>1.0.4</td>
+                            <td>2012/12/14</td>
+                        </tr>
+                        <tr class="library-row" data-url="https://github.com/hasbridge/php-json-schema">
+                            <td>php-json-schema</td>
+                            <td>MIT</td>
+                            <td>PHP</td>
+                            <td>Validation</td>
+                            <td>draft v3</td>
+                            <td>v0.1.0</td>
+                            <td>2012/02/27</td>
+                        </tr>
+                        <tr class="library-row" data-url="https://github.com/justinrainbow/json-schema">
+                            <td>json-schema</td>
+                            <td>New BSD</td>
+                            <td>PHP</td>
+                            <td>Validation</td>
+                            <td>draft v3</td>
+                            <td>v1.2.0</td>
+                            <td>2012/11/29</td>
+                        </tr>
+                        <tr class="library-row" data-url="http://orderly-json.org">
+                            <td>orderly</td>
+                            <td>New BSD</td>
+                            <td>JavaScript</td>
+                            <td>Generation</td>
+                            <td>draft v2</td>
+                            <td>v2</td>
+                            <td>2010/03/03</td>
+                        </tr>
+                        <tr class="library-row" data-url="http://github.com/garycourt/JSV">
+                            <td>JSV</td>
+                            <td>New BSD</td>
+                            <td>JavaScript</td>
+                            <td>Validation</td>
+                            <td>draft v3</td>
+                            <td>4.0.2</td>
+                            <td>2012/07/11</td>
+                        </tr>
+                        <tr class="library-row" data-url="http://github.com/kriszyp/json-schema">
+                            <td>json-schema</td>
+                            <td>New BSD</td>
+                            <td>JavaScript</td>
+                            <td>Validation</td>
+                            <td>draft v3</td>
+                            <td>0.2.1</td>
+                            <td>2011/11/29</td>
+                        </tr>
+                        <tr class="library-row" data-url="https://github.com/mattyod/matic">
+                            <td>matic</td>
+                            <td>MIT</td>
+                            <td>JavaScript</td>
+                            <td>Documentation</td>
+                            <td>draft v3</td>
+                            <td>dev</td>
+                            <td>2012/12/20</td>
+                        </tr>
+                        <tr class="library-row" data-url="http://dojotoolkit.org/reference-guide/1.8/dojox/json/schema.html">
+                            <td>dojox.json.schema</td>
+                            <td>New BSD</td>
+                            <td>JavaScript</td>
+                            <td>Validation</td>
+                            <td>draft v3</td>
+                            <td>1.8</td>
+                            <td>2012/08/17</td>
+                        </tr>
+                        <tr class="library-row" data-url="https://github.com/persvr/perstore">
+                            <td>persvr/perstore</td>
+                            <td>AFL2.0</td>
+                            <td>JavaScript</td>
+                            <td>Validation</td>
+                            <td>draft v3</td>
+                            <td>v0.3.1</td>
+                            <td>2012/10/01</td>
+                        </tr>
+                        <tr class="library-row" data-url="https://github.com/akidee/schema.js">
+                            <td>schema.js</td>
+                            <td>MIT</td>
+                            <td>JavaScript</td>
+                            <td>Validation</td>
+                            <td>draft v2</td>
+                            <td>v0.2.1</td>
+                            <td>2012/11/13</td>
+                        </tr>
+                        <tr class="library-row" data-url="http://github.com/IreneKnapp/direct-schema">
+                            <td>direct-schema</td>
+                            <td>New BSD</td>
+                            <td>JavaScript</td>
+                            <td>Validation</td>
+                            <td>draft v3</td>
+                            <td>0.3.1</td>
+                            <td>2012/11/16</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <p><small>Version and project activity info as collected on 2012/12/21</small></p>
 
-<h2>C</h2>
-<ul>
-    <li> <a id="link-impl-wjelement" href="https://github.com/netmail-open/wjelement">WJElement</a> (LGPLv3).</li>
-</ul>
+<p><strong>Please note:</strong> Lack of recent activity alone should not immediately disqualify a project unless
+it bears no evidence of maturity. Further investigation is advised before settling on any particular solution.</p>
 
-<h2>Java</h2>
+<h3 id="unity-list">The unity list</h3>
+<p>As we continue to apply additional non-biased, measurable, comparable, obtainable indicators by which more
+reliable rankings can be accomplished. The ultimate goal is to encourage an overall improvement in the quality of
+existing products as effort is made to improve rankings. Thus for the greater good and benefit of our community
+as a whole you can start to raise awareness by linking to the list from your projects, blo0gs, profiles, tweets,
+unicorns for if rankings here are to have any influence it will be because you made it so. While we can encourage
+best practices we cannot force a united community that speaks with one voice. You alone have the power to consciously
+choose unity and see it materialize or choose to decline and we stand divided and all shall be in vain.</p>
 
-<ul>
-    <li><a id="link-impl-fge-json-schema-validator" href="https://github.com/fge/json-schema-validator">json-schema-validator</a>
-    (LGPLv3).</li>
-</ul>
+<p>Deliberately trying to avoid all the obvious cliches: lets simply create something truly amazing and leave our
+legacy. </p>
+<p style="height:900px;">&nbsp;</p>
 
-<h2>.NET</h2>
-
-<ul>
-    <li><a id="link-impl-json-net" href="http://james.newtonking.com/projects/json-net.aspx">Json.NET</a> (MIT).</li>
-</ul>
-
-<h2>ActionScript 3</h2>
-
-<ul>
-    <li><a id="link-impl-frigga" href="https://github.com/raulbajales/Frigga">Frigga</a> (MIT).</li>
-</ul>
-
-<h2>Haskell</h2>
-
-<p>If that is not proof that JSON Schema is language agnostic, I don't know what is.</p>
-
-<ul>
-    <li><a id="link-impl-aeson-schema" href="https://github.com/timjb/aeson-schema">aeson-schema</a> (MIT).</li>
-</ul>
-
-<h2>Python</h2>
-
-<ul>
-    <li><a id="link-impl-jsonschema" href="https://github.com/Julian/jsonschema">jsonschema</a> (MIT);</li>
-    <li><a id="link-impl-zyga-json-schema-validator" href="https://github.com/zyga/json-schema-validator">json-schema-validator</a> (LGPL).</li>
-</ul>
-
-                </div> <!-- style="padding-left:40px; margin-right:-40px;" class="span4" -->
-
-                <div class="span4">
-
-<h2>Ruby</h2>
-
-<ul>
-    <li><a id="link-impl-autoparse" href="https://github.com/google/autoparse">autoparse</a> (ASL 2.0);</li>
-    <li><a id="link-impl-ruby-jsonchema" href="https://github.com/Constellation/ruby-jsonchema">ruby-jsonschema</a> (MIT).</li>
-</ul>
-
-
-<h2>PHP</h2>
-
-<ul>
-    <li><a id="link-impl-php-json-schema" href="https://github.com/hasbridge/php-json-schema">php-json-schema</a> (MIT).</li>
-    <li><a id="link-impl-json-schema" href="https://github.com/justinrainbow/json-schema">json-schema</a> (Berkeley).</li>
-</ul>
-
-<h2>JavaScript</h2>
-
-<ul>
-    <li><a id="link-impl-orderly" href="http://orderly-json.org">Orderly</a> (BSD);</li>
-    <li><a id="link-impl-jsv" href="http://github.com/garycourt/JSV">JSV</a> (BSD);</li>
-    <li><a id="link-impl-kriszyp-jsonschema" href="http://github.com/kriszyp/json-schema">json-schema</a> (AFL or BSD);</li>
-    <li><a id="link-impl-matic" href="https://github.com/mattyod/matic">Matic</a> (MIT);</li>
-    <li><a id="link-impl-dojo" href="http://www.dojotoolkit.org/">Dojo</a> (AFL or BSD);</li>
-    <li><a id="link-impl-persvr" href="http://www.persvr.org/">Persevere</a> (modified BSD or AFL 2.0);</li>
-    <li><a id="link-impl-schema-js" href="https://github.com/akidee/schema.js">schema.js</a> (MIT).</li>
-    <li><a id="link-impl-direct-schema" href="http://github.com/IreneKnapp/direct-schema">direct-schema</a> (BSD);</li>
-</ul>
 
                 </div> <!-- class="span4" -->
             </div> <!-- class="row" -->
         </div> <!-- class="span8" -->
     </div> <!-- class="row" -->
 </div> <!-- class="container" -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.5.2/jquery.tablesorter.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.5.2/jquery.tablesorter.widgets.min.js"></script>
+<script>
+    (function ($, document, window, undefined) {
+        $(document).ready(function () {
+            $('#library-table').tablesorter({
+                sortList : [[3,0],[2,0],[6,1]],
+                widgets: ["columns"],
+                widgetOptions: {
+                    columns: [ "primary", "secondary", "tertiary" ],
+                    columns_thead : false,
+                    columns_tfoot : false
+                }
+            });
+            $('tr.library-row').each(function () {
+                $(this).click(function () {
+                    window.open($(this).data('url'));
+                });
+            });
+        });
+    }(jQuery, document, window));
+</script>
+<script src="lib/common.js"></script>
 </body>
 </html>
