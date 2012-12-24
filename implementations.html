@@ -248,6 +248,29 @@ license of the project is also mentioned.</p>
         </div> <!-- class="span8" -->
     </div> <!-- class="row" -->
 </div> <!-- class="container" -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.5.2/jquery.tablesorter.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.5.2/jquery.tablesorter.widgets.min.js"></script>
+<script>
+    (function ($, document, window, undefined) {
+        $(document).ready(function () {
+            $('#library-table').tablesorter({
+                sortList : [[3,0],[2,0],[6,1]],
+                widgets: ["columns"],
+                widgetOptions: {
+                    columns: [ "primary", "secondary", "tertiary" ],
+                    columns_thead : false,
+                    columns_tfoot : false
+                }
+            });
+            $('tr.library-row').each(function () {
+                $(this).click(function () {
+                    window.open($(this).data('url'));
+                });
+            });
+        });
+    }(jQuery, document, window));
+</script>
 <script src="lib/common.js"></script>
 </body>
 </html>
