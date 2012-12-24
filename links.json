@@ -2,7 +2,7 @@
     "$schema": "http://json-schema.org/draft-03/hyper-schema#",
     "id": "http://json-schema.org/draft-03/links#",
     "type": "object",
-    
+
     "properties": {
         "href": {
             "type": "string",
