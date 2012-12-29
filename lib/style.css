@@ -1,3 +1,12 @@
+html {
+    margin-top: 165px;
+}
+#title-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+}
 #title {
     background-image: url(https://secure.gravatar.com/avatar/ebeee14045a5b78e7c70465794732a14?s=100);
     background-position: left;
