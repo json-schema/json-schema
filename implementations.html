@@ -399,6 +399,10 @@ legacy. </p>
                             .append($('<a>').attr('href', t[0].zipball_url)
                                 .attr('title','Download zip archive.')
                                 .append($('<span>').addClass('dl entypo-install')));
+                        else
+                            p.row.children('.impl-version')
+                                .append($('<span>').addClass('dl no-data entypo-block')
+                                .attr('title',no_tags))
                     });
                 });
             } else {
