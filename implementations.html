@@ -403,6 +403,7 @@ legacy. </p>
                             p.row.children('.impl-version')
                                 .append($('<span>').addClass('dl no-data entypo-block')
                                 .attr('title',no_tags))
+                        $('#library-table').trigger('update');
                     });
                 });
             } else {
