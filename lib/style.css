@@ -154,6 +154,10 @@ span.dl  {
     margin-left: 5px;
     float: right;
     font-size: 11px;
+    transition: font-size 0.25s, margin 0.25s, transform 0.25s;
+    -moz-transition: font-size 0.25s, margin 0.25s, -moz-transform 0.25s;
+    -webkit-transition: font-size 0.25s, margin 0.25s, -webkit-transform 0.25s;
+    -o-transition: font-size 0.25s, margin 0.25s, -o-transform 0.25s;
 }
 span.dl:hover  {
     color: #000;
@@ -161,9 +165,20 @@ span.dl:hover  {
     margin-right: -10px;
     margin-bottom: -5px;
     font-size:34px;
+    transition: font-size 0.25s, margin 0.25s, transform 0.25s;
+    -moz-transition: font-size 0.25s, margin 0.25s, -moz-transform 0.25s;
+    -webkit-transition: font-size 0.25s, margin 0.25s, -webkit-transform 0.25s;
+    -o-transition: font-size 0.25s, margin 0.25s, -o-transform 0.25s;
 }
 span.no-data  {
     color: #ff9489;
+}
+span.no-data,
+span.gh-repo {
+    transition: font-size 1s ease 5s, margin 1s ease 5s, color 1s ease 5s, transform 1s ease 5s;
+    -moz-transition: font-size 1s ease 5s, margin 1s ease 5s, color 1s ease 5s, -moz-transform 1s ease 5s;
+    -webkit-transition: font-size 1s ease 5s, margin 1s ease 5s, color 1s ease 5s, -webkit-transform 1s ease 5s;
+    -o-transition: font-size 1s ease 5s, margin 1s ease 5s, color 1s ease 5s, -o-transform 1s ease 5s;
 }
 span.no-data:hover  {
     color: #F00;
