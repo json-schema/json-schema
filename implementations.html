@@ -390,6 +390,9 @@ legacy. </p>
                         if (t[0])
                             p.row.children('.impl-version')
                                 .text(t[0].name
+                                    .replace(/^[a-z]*-|^v/,'')
+                                    .replace('beta','b')
+                                    .replace('alpha','a'))
                     });
                 });
             } else {
