@@ -410,6 +410,10 @@ legacy. </p>
               p.row.children('.impl-name')
                   .append($('<span>').addClass('dl no-data entypo-block')
                   .attr('title','Non GitHub repository no comparable data available, unable to update last activity date.'))
+              .parent().children('.impl-version')
+                  .append($('<span>').addClass('dl no-data entypo-block')
+                  .attr('title',no_tags))
+            }
         });
     }(jQuery, document, window));
 </script>
