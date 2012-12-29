@@ -393,6 +393,12 @@ legacy. </p>
                                     .replace(/^[a-z]*-|^v/,'')
                                     .replace('beta','b')
                                     .replace('alpha','a'))
+                            .append($('<a>').attr('href', t[0].tarball_url)
+                                .attr('title','Download tarball.')
+                                .append($('<span>').addClass('dl entypo-install')))
+                            .append($('<a>').attr('href', t[0].zipball_url)
+                                .attr('title','Download zip archive.')
+                                .append($('<span>').addClass('dl entypo-install')));
                     });
                 });
             } else {
