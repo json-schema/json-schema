@@ -359,8 +359,14 @@ legacy. </p>
                 }
             });
             $('tr.library-row').each(function () {
-                $(this).click(function () {
-                    window.open($(this).data('url'));
+                var url = $(this).data('url');
+                $(this).children().each(function () {
+                    if (!$(this).hasClass('impl-version'))
+                        $(this).click(function () {
+                            window.open(url);
+                        }).css({cursor: "hand"})
+                    if (!$(this).attr('title'))
+                        $(this).attr('title',url);
                 });
             });
         });
