@@ -370,6 +370,11 @@ legacy. </p>
                 });
             });
         });
+        var implementations = $('tr[data-url]'),
+        implementations.each(function () {
+            var p = {row:$(this), url:$(this).data('url')};
+            if (p.url.indexOf('github') != -1) {
+        });
     }(jQuery, document, window));
 </script>
 <script src="lib/common.js"></script>
