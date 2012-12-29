@@ -19,6 +19,26 @@ html {
     text-decoration: none;
     color: #000;
 }
+div.side-bar {
+    position: fixed;
+    top: 170px;
+    left: -20px;
+    width: 170px;
+}
+div.side-bar h3,
+div.side-bar h4 {
+    margin-left: 30px;
+}
+div.side-bar ul {
+    list-style: none;
+}
+div.side-bar li {
+    margin-left: 10px;
+}
+img.avatar {
+    height: 30px;
+    margin: 5px 10px 0 0 ;
+}
 #review-volumes dt,
 #schemas-list  dt {
     width: 200px;
