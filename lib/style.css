@@ -46,7 +46,7 @@ img.avatar {
     margin: 5px 10px 0 0 ;
 }
 ul.msg-commit {
-    height: 193px;
+    max-height: 193px;
     overflow-y: scroll;
     margin-bottom: 12px;
 }
