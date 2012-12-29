@@ -374,6 +374,10 @@ legacy. </p>
         implementations.each(function () {
             var p = {row:$(this), url:$(this).data('url')};
             if (p.url.indexOf('github') != -1) {
+            } else {
+              p.row.children('.impl-name')
+                  .append($('<span>').addClass('dl no-data entypo-block')
+                  .attr('title','Non GitHub repository no comparable data available, unable to update last activity date.'))
         });
     }(jQuery, document, window));
 </script>
