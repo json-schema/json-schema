@@ -46,10 +46,9 @@ img.avatar {
 #review-volumes dd,
 #schemas-list  dd {
     margin-left: 207px;
-    margin-right: 100px;
 }
-#schemas-list dd {
-    margin-right: 20px;
+.dl-horizontal dd {
+    margin-right: 100px;
 }
 img.ribbon {
     position: fixed;
