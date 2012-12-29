@@ -124,5 +124,18 @@ img.ribbon {
     white-space: nowrap;
 }
 tr.library-row  {
+    font-size: smaller;
+}
+.tablesorter td.impl-version {
+    width: 78px;
+}
+.tablesorter td.impl-type,
+.tablesorter td.impl-schema,
+.tablesorter td.impl-issue,
+.tablesorter td.impl-fork,
+.tablesorter td.impl-watch,
+.tablesorter td.impl-license {
+    text-align: center;
+}
     cursor: hand;
 }
