@@ -386,6 +386,8 @@ legacy. </p>
                         .prev().text(o.watchers)
                         .prev().text(o.forks)
                         .prev().text(o.open_issues);
+                    github.repos.tags(p.login,p.name,function (t) {
+                    });
                 });
             } else {
               p.row.children('.impl-name')
