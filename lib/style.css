@@ -143,5 +143,25 @@ tr.library-row  {
 .tablesorter td.impl-license {
     text-align: center;
 }
+span.dl  {
+    color: #424442;
     cursor: hand;
+    margin-left: 5px;
+    float: right;
+    font-size: 11px;
+}
+span.dl:hover  {
+    color: #000;
+    margin-left: -7px;
+    margin-right: -10px;
+    margin-bottom: -5px;
+    font-size:34px;
+}
+span.no-data  {
+    color: #ff9489;
+}
+span.no-data:hover  {
+    color: #F00;
+    opacity: 1;
+    font-size:28px;
 }
