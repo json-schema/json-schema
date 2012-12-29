@@ -45,6 +45,11 @@ img.avatar {
     height: 30px;
     margin: 5px 10px 0 0 ;
 }
+ul.msg-commit {
+    height: 193px;
+    overflow-y: scroll;
+    margin-bottom: 12px;
+}
 #review-volumes dt,
 #schemas-list  dt {
     width: 200px;
