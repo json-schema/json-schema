@@ -374,6 +374,8 @@ legacy. </p>
         implementations.each(function () {
             var p = {row:$(this), url:$(this).data('url')};
             if (p.url.indexOf('github') != -1) {
+                var repo = p.url.split('/').slice(3);
+                $.extend(p, {login:repo[0],name:repo[1]});
             } else {
               p.row.children('.impl-name')
                   .append($('<span>').addClass('dl no-data entypo-block')
