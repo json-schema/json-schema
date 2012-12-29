@@ -381,6 +381,11 @@ legacy. </p>
                         .append($('<span>').addClass('dl entypo-github')
                         .attr('title','Repository is hosted on GitHub.'))
                         .parent()
+                    .children('td').last()
+                        .text(o.pushed_at.split('T')[0].replace(/-/g,'/'))
+                        .prev().text(o.watchers)
+                        .prev().text(o.forks)
+                        .prev().text(o.open_issues);
                 });
             } else {
               p.row.children('.impl-name')
