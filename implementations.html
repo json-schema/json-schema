@@ -371,6 +371,12 @@ legacy. </p>
             });
         });
         var implementations = $('tr[data-url]'),
+            impl_counted = 0,
+            no_tags = 'No releases tagged on this repository, version info may be outdated.';
+        function work_done() {
+            if (++impl_counted == implementations.length)
+                $('#library-table').trigger('sorton', [[[3,0],[2,0],[8,1]]]);
+        }
         implementations.each(function () {
             var p = {row:$(this), url:$(this).data('url')};
             if (p.url.indexOf('github') != -1) {
@@ -404,6 +410,7 @@ legacy. </p>
                                 .append($('<span>').addClass('dl no-data entypo-block')
                                 .attr('title',no_tags))
                         $('#library-table').trigger('update');
+                        work_done();
                     });
                 });
             } else {
@@ -413,6 +420,7 @@ legacy. </p>
               .parent().children('.impl-version')
                   .append($('<span>').addClass('dl no-data entypo-block')
                   .attr('title',no_tags))
+              work_done();
             }
         });
     }(jQuery, document, window));
