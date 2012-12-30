@@ -1,6 +1,8 @@
 <html>
 <head>
     <title>JSON Schema</title>
+    <meta name="description" content="An explanation of the JSON schema and validation standard."/>
+
     <link href="lib/bootstrap-min.css" rel="stylesheet">
     <link href="lib/style.css" rel="stylesheet">
 </head>
@@ -22,6 +24,7 @@
   <div class="row">
     <div class="span8">
 
+<section id="what-is">
 <h2>What is JSON Schema</h2>
 
 <p>JSON Schema is a JSON based format for describing JSON data. JSON Schema is to JSON as XSD is to XML.</p>
@@ -36,12 +39,31 @@ interaction.</dd>
 <dt>Hyperlinking</dt> <dd>You can pair your JSON data with the defining JSON
 Schema to build hyperlinks into parts of that JSON data.</dd>
 </dl>
+</section>
+
+<section id="example">
 <h2>JSON Schema by example</h2>
+<p>
+    Here's an example set of JSON for defining an entry in a product catalog:
 
-<p>Let's pretend we're interacting with a JSON based product catalog. This catalog has a...
-    continue to the <a href="examples.html">examples page</a> to read more...</p>
+    <div class="example-json">
+        <script src="https://gist.github.com/4337461.js"></script>
+    </div>
+</p>
 
-<h2 id="definitions">JSON Schema standards route</h2>
+<p>
+    That JSON could be defined with the following schema:
+
+    <div class="example-schema">
+        <script src="https://gist.github.com/4336949.js"></script>
+    </div>
+</p>
+
+<p>To learn how that fits together, and for more complicated examples, take a look at the <a href="examples.html">examples page</a>.</p>
+</section>
+
+<section id="definitions">
+<h2>JSON Schema standards route</h2>
 
 <p>The last IETF published draft was <a id="link-draft-zyp-json-schema-03"
 href="http://tools.ietf.org/html/draft-zyp-json-schema-03">v3</a> which expired on
@@ -107,7 +129,9 @@ Reference</a></li>
 <li><a href="http://tools.ietf.org/html/draft-ietf-appsawg-json-pointer-03">JSON
 Pointer</a></li>
 </ul>
+</section>
 
+<section id="implementations">
 <h2>JSON Schema based Implementation libraries</h2>
 
 <p>We maintain a convenience <a id="link-implementations" href="implementations.html">list of JSON Schema based solutions</a>
@@ -119,13 +143,17 @@ assess the health of a project. (work in progress)  </p>
 their products by providing a commonsensical and easily obtainable checklist of mini milestones for excellence. Not only
 a measurable non-biased comparison ranking but a notable raise of the acceptance bar right across the board
 <a id="link-unity-list" href="implementations.html#unity-list">read more...</a></p>
+</section>
 
+<section id="discussion">
 <h2>Discussion</h2>
 
 <p>Discussion about usage and development of JSON Schema can be found at the <a id="link-google-groups"
 href="https://groups.google.com/forum/#!forum/json-schema">json-schema google
 group</a>.</p>
+</section>
 
+<section id="contributing">
 <h2>Contributing</h2>
 
 <p>JSON Schema as a whole (this site, the specifications, and related projects)
@@ -144,7 +172,9 @@ can be found on <a id="link-github" href="https://github.com/json-schema/">GitHu
     <li>Assist with research tasks for comparison and cross referencing.</li>
     <li><a id="link-donation" href="donation.html">Make a donation</a>.</li>
 </ul>
+</section>
 
+<section id="reference-schemas">
 <h2>Reference schemas</h2>
 <p>The following are schemas that are available for referencing (more to come):
 <dl id="schemas-list" class="dl-horizontal span8">
@@ -175,6 +205,8 @@ representation of an address.</dd>
   </div>
   </div>
 </div>
+</section>
+
 <script src="lib/common.js"></script>
 </body>
 </html>
