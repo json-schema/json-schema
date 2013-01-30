@@ -417,8 +417,8 @@ Internet-Draft                 JSON Schema                  January 2013
 
 7.1.  Definition
 
-   JSON Schema uses JSON Reference [json-reference] as a general
-   addressing mechanism.  It extends this specification in two ways:
+   JSON Schema uses JSON Reference [json-reference] as a mechanism
+   for schema addressing.  It extends this specification in two ways:
 
       JSON Schema offers facilities to alter the base URI against which
       a reference must resolve by the means of the "id" keyword;

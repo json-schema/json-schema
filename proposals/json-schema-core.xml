@@ -355,7 +355,7 @@
             <section title="Definition">
                 <t>
                     JSON Schema uses <xref target="json-reference">JSON Reference</xref> as a
-                    general addressing mechanism. It extends this specification in two ways:
+                    mechanism for schema addressing. It extends this specification in two ways:
                     
                     <list>
                         <t>JSON Schema offers facilities to alter the base URI against which a
