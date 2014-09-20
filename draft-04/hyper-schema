@@ -100,6 +100,10 @@
                 }
             }
         },
+        "readOnly": {
+            "type": boolean,
+            "description": "If true, the associated instance property SHOULD NOT be changed, and attempts to do so are expected to be rejected by a server."
+        },
         "pathStart": {
             "description": "Instances' URIs must start with this value for this schema to apply to them",
             "type": "string",
