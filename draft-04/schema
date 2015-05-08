@@ -23,6 +23,13 @@
             "items": { "type": "string" },
             "minItems": 1,
             "uniqueItems": true
+        },
+        "referenceObject": {
+            "type": "object",
+            "properties": {
+                "$ref" : { "type": "string" }
+            },
+            "additionalProperties": false
         }
     },
     "type": "object",
@@ -145,7 +152,8 @@
     },
     "dependencies": {
         "exclusiveMaximum": [ "maximum" ],
-        "exclusiveMinimum": [ "minimum" ]
+        "exclusiveMinimum": [ "minimum" ],
+        "$ref": { "$ref": "#/definitions/referenceObject" }
     },
     "default": {}
 }
