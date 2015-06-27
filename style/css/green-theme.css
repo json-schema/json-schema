@@ -111,6 +111,12 @@ h2 {
 
 .key-value {
 	width: 100%;
+	display: table;
+}
+
+.key-value .key,
+.key-value .value {
+    display: table-cell;
 }
 
 .key-value .key {
@@ -139,6 +145,12 @@ ul {
 
 li {
 	margin: 0.2em;
+}
+
+var, code {
+    font-family: monospace;
+    font-style: normal;
+    font-weight: bold;
 }
 
 .show-hide {
