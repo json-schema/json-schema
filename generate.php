@@ -50,8 +50,8 @@ foreach ($pages as $outputFile => $pageSpec) {
 <html>
 	<head>
 		<title><?php echo $pageSpec['pageTitle']; ?></title>
-		<link href="style/css/green-theme.css" rel="stylesheet">
-		<link rel="stylesheet" href="style/css/json-highlight.css"></link>
+		<link rel="stylesheet" href="style/css/green-theme.css"  />
+		<link rel="stylesheet" href="style/css/json-highlight.css" />
 		<script type="text/javascript">
 			var _gaq = _gaq || [];
 			var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
@@ -68,7 +68,7 @@ foreach ($pages as $outputFile => $pageSpec) {
 	</head>
 	<body>
 		<script src="style/js/jquery.js"></script>
-		<div class="page-container" align=center>
+		<div class="page-container" align="center">
 			<div class="page-header">
 				<h1>json-schema.org</h1>
 				<div class="tagline">The home of JSON Schema</div>
