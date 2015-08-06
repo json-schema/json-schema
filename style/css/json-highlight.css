@@ -5,6 +5,7 @@
 	padding: 0.5em;
 	font-family: Consolas, "Liberation Mono", Courier, monospace;
 	font-size: 13px;
+    white-space: pre-wrap;
 }
 
 .json-punctuation {
