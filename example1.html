@@ -1,15 +1,18 @@
+
 <html>
 	<head>
 		<title>JSON Schema - Simple Example</title>
-		<link href="style/css/green-theme.css" rel="stylesheet">
-		<link rel="stylesheet" href="style/css/json-highlight.css"></link>
+		<link rel="stylesheet" href="lib/css/bootstrap.min.css"></link>
+		<link rel="stylesheet" href="lib/css/bootstrap-theme.min.css"></link>
+		<link rel="stylesheet" href="lib/css/green-theme.css"></link>
+		<link rel="stylesheet" href="lib/css/json-highlight.css"></link>
 		<script type="text/javascript">
 			var _gaq = _gaq || [];
 			var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
 			_gaq.push(['_require', 'inpage_linkid', pluginUrl]);
 			_gaq.push(['_setAccount', 'UA-37169005-1']);
 			_gaq.push(['_trackPageview']);
-			
+
 			(function() {
 				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
@@ -17,18 +20,28 @@
 			})();
 		</script>
 	</head>
-	<body>
-		<script src="style/js/jquery.js"></script>
-		<div class="page-container" align=center>
-			<div class="page-header">
-				<h1>json-schema.org</h1>
-				<div class="tagline">The home of JSON Schema</div>
-			</div>
-			
-			<div class="page-content">
-				<div class="page-menu">
-				<a href=".">about</a> <a href="documentation.html">docs</a> <a class="selected" href="examples.html">examples</a> <a href="implementations.html">software</a> 				</div>
+	  <body role="document">
 
+			<nav class="navbar navbar-inverse navbar-fixed-top">
+	      <div class="container">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	            <span class="glyphicon glyphicon-menu-hamburger"></span>
+	          </button>
+	          <a class="navbar-brand" href="index.html">
+							<span class="logo">
+								<span class="json-site">json</span><span class="schema-site">schema</span>
+							</span>
+						</a>
+	        </div>
+	        <div id="navbar" class="navbar-collapse collapse navbar-right">
+	          <ul class="nav navbar-nav">
+							<li class=""><a href="index.html">about</a></li><li class=""><a href="documentation.html">docs</a></li><li class="active"><a href="examples.html">examples</a></li><li class=""><a href="implementations.html">software</a></li>	          </ul>
+	        </div><!--/.nav-collapse -->
+	      </div>
+	    </nav>
+
+      <div class="container" role="main">
 				<h2>Example data</h2>
 <div class="block">
     <p>Let's pretend we're interacting with a JSON based product catalog. This catalog has a product which has an <em>id</em>, a <em>name</em>, a <em>price</em>, and an optional set of <em>tags</em>.</p>
@@ -211,7 +224,7 @@
 
 <h2>Summary</h2>
 <div class="block">
-    <p>The above example is by no means definitive of all the types of data JSON schema can define. For more definitive information see the <a href="draft-04/schema#definitions">full standard draft</a>.</p>
+    <p>The above example is by no means definitive of all the types of data JSON schema can define. For more definitive information see the <a href="#definitions">full standard draft</a>.</p>
     <p>As a final example, here's a spec for an array of products, with the products having 2 new properties. The first is a <em>dimensions</em> property for the size of the product, and the second is a <em>warehouseLocation</em> field for where the warehouse that stores them is geographically located.</p>
     <p>And also, since JSON Schema defines a reference schema for a geographic location, instead of coming up with our own, we'll reference the <a href="http://json-schema.org/geo">canonical one</a>.</p>
 
@@ -237,7 +250,7 @@
         "id": 3,
         "name": "A blue mouse",
         "price": 25.50,
-        "dimensions": {
+            "dimensions": {
             "length": 3.1,
             "width": 1.0,
             "height": 1.0
@@ -301,8 +314,16 @@
 </div>
 
 			</div>
-		</div>
-		<script src="style/js/json-highlight.js"></script>
-		<script src="style/js/show-hide.js"></script>
+
+		<footer class="footer">
+      <div class="container">
+        <p class="text-muted">The home of JSON Schema.</p>
+      </div>
+    </footer>
+
+		<script src="lib/js/jquery.min.js"></script>
+		<script src="lib/js/bootstrap.min.js"></script>
+		<script src="lib/js/json-highlight.js"></script>
+		<script src="lib/js/show-hide.js"></script>
 	</body>
 </html>

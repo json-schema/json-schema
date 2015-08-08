@@ -2,8 +2,10 @@
 <html>
 	<head>
 		<title>JSON Schema - Advanced Example</title>
-		<link href="style/css/green-theme.css" rel="stylesheet">
-		<link rel="stylesheet" href="style/css/json-highlight.css"></link>
+		<link rel="stylesheet" href="lib/css/bootstrap.min.css"></link>
+		<link rel="stylesheet" href="lib/css/bootstrap-theme.min.css"></link>
+		<link rel="stylesheet" href="lib/css/green-theme.css"></link>
+		<link rel="stylesheet" href="lib/css/json-highlight.css"></link>
 		<script type="text/javascript">
 			var _gaq = _gaq || [];
 			var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
@@ -18,18 +20,28 @@
 			})();
 		</script>
 	</head>
-	<body>
-		<script src="style/js/jquery.js"></script>
-		<div class="page-container" align=center>
-			<div class="page-header">
-				<h1>json-schema.org</h1>
-				<div class="tagline">The home of JSON Schema</div>
-			</div>
+	  <body role="document">
 
-			<div class="page-content">
-				<div class="page-menu">
-				<a href=".">about</a> <a href="documentation.html">docs</a> <a class="selected" href="examples.html">examples</a> <a href="implementations.html">software</a> 				</div>
+			<nav class="navbar navbar-inverse navbar-fixed-top">
+	      <div class="container">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	            <span class="glyphicon glyphicon-menu-hamburger"></span>
+	          </button>
+	          <a class="navbar-brand" href="index.html">
+							<span class="logo">
+								<span class="json-site">json</span><span class="schema-site">schema</span>
+							</span>
+						</a>
+	        </div>
+	        <div id="navbar" class="navbar-collapse collapse navbar-right">
+	          <ul class="nav navbar-nav">
+							<li class=""><a href="index.html">about</a></li><li class=""><a href="documentation.html">docs</a></li><li class="active"><a href="examples.html">examples</a></li><li class=""><a href="implementations.html">software</a></li>	          </ul>
+	        </div><!--/.nav-collapse -->
+	      </div>
+	    </nav>
 
+      <div class="container" role="main">
 				<h2>Purpose</h2>
 <div class="block">
     <p>This example shows a possible JSON representation of a hypothetical machine's mount points as
@@ -490,10 +502,17 @@
     draft v4 (in fact, most don't support it).</li>
     </ul>
 </div>
-
 			</div>
-		</div>
-		<script src="style/js/json-highlight.js"></script>
-		<script src="style/js/show-hide.js"></script>
+
+		<footer class="footer">
+      <div class="container">
+        <p class="text-muted">The home of JSON Schema.</p>
+      </div>
+    </footer>
+
+		<script src="lib/js/jquery.min.js"></script>
+		<script src="lib/js/bootstrap.min.js"></script>
+		<script src="lib/js/json-highlight.js"></script>
+		<script src="lib/js/show-hide.js"></script>
 	</body>
 </html>

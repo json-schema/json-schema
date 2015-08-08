@@ -1,24 +1,20 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
-	background-color: #E8EDE8;
-	background-image: url('green-page-background.png');
-	background-position: top;
-	background-repeat: repeat-x;
 	margin: 0;
 	padding: 0;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size:15px;
 	color: #333;
 }
-
-a {
-	text-decoration: none;
-	color: #292;
+body > .container {
+	padding-top: 80px;
+	padding-bottom: 60px;
 }
 
-a:hover {
-	text-decoration: underline;
-	color: #4B4;
-}
 
 /* Heading */
 
@@ -90,10 +86,7 @@ h1 {
 }
 
 h2 {
-	margin: 0;
-	font-size: 1.1em;
 	font-weight: bold;
-	padding-left: 1em;
 }
 
 .block {
@@ -137,10 +130,6 @@ ul {
 	margin-left: 4em;
 }
 
-li {
-	margin: 0.2em;
-}
-
 .show-hide {
 	float: right;
 	width: 5em;
@@ -150,4 +139,77 @@ li {
 
 .show-hide:hover {
 	color: #0A0;
+}
+
+.logo {
+
+}
+
+.logo.splash {
+	color:#00940c;
+	text-align:center;
+ 	 font-size: 10vw;
+}
+
+@media (min-width: 1200px) {
+	.logo.splash {
+		font-size: 11rem;
+  }
+}
+.logo .json-site {
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: inherit;
+}
+
+.logo .schema-site {
+	font-weight: normal;
+	font-family: cursive;
+	font-style: italic;
+	text-transform: lowercase;
+	font-size: inherit;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #00940C;
+}
+
+.footer > .container {
+  padding: 10px 15px;
+}
+.footer > .container > p {
+    margin: 0px;
+}
+.footer > .container .text-muted {
+    color: #ddd;
+}
+
+/* bootstrap overrides */
+.navbar-inverse {
+    background-image: linear-gradient(to bottom, #04BD13 0px, #00940C 100%);
+    background-repeat: repeat-x;
+    border-radius: 0px;
+}
+.navbar-inverse {
+    background-color: #00940C;
+    border-color: #04BD13;
+}
+.navbar-inverse .navbar-brand {
+    color: #fff;
+}
+.navbar-inverse .navbar-nav > li > a {
+    color: #fff;
+		text-transform: capitalize;
+}
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .open > a {
+    background-image: linear-gradient(to bottom, #777 0px, #444 100%);
+    background-repeat: repeat-x;
+    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.25) inset;
+}
+.navbar-fixed-top {
+    border-width: 0;
+    top: 0;
 }

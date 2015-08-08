@@ -3,7 +3,7 @@
 header("Content-Type: text/plain");
 
 $menu = array(
-	"about" => ".",
+	"about" => "index.html",
 	"docs" => "documentation.html",
 	"examples" => "examples.html",
 	"software" => "implementations.html"
@@ -50,15 +50,17 @@ foreach ($pages as $outputFile => $pageSpec) {
 <html>
 	<head>
 		<title><?php echo $pageSpec['pageTitle']; ?></title>
-		<link href="style/css/green-theme.css" rel="stylesheet">
-		<link rel="stylesheet" href="style/css/json-highlight.css"></link>
+		<link rel="stylesheet" href="lib/css/bootstrap.min.css"></link>
+		<link rel="stylesheet" href="lib/css/bootstrap-theme.min.css"></link>
+		<link rel="stylesheet" href="lib/css/green-theme.css"></link>
+		<link rel="stylesheet" href="lib/css/json-highlight.css"></link>
 		<script type="text/javascript">
 			var _gaq = _gaq || [];
 			var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
 			_gaq.push(['_require', 'inpage_linkid', pluginUrl]);
 			_gaq.push(['_setAccount', 'UA-37169005-1']);
 			_gaq.push(['_trackPageview']);
-			
+
 			(function() {
 				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
@@ -66,34 +68,49 @@ foreach ($pages as $outputFile => $pageSpec) {
 			})();
 		</script>
 	</head>
-	<body>
-		<script src="style/js/jquery.js"></script>
-		<div class="page-container" align=center>
-			<div class="page-header">
-				<h1>json-schema.org</h1>
-				<div class="tagline">The home of JSON Schema</div>
-			</div>
-			
-			<div class="page-content">
-				<div class="page-menu">
-				<?php
-					foreach ($menu as $text => $target) {
-						if ($text == $pageSpec['menu']) {
-							echo "<a class=\"selected\" href=\"$target\">$text</a> ";
-						} else {
-							echo "<a href=\"$target\">$text</a> ";
-						}
-					}
-				?>
-				</div>
+	  <body role="document">
 
+			<nav class="navbar navbar-inverse navbar-fixed-top">
+	      <div class="container">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	            <span class="glyphicon glyphicon-menu-hamburger"></span>
+	          </button>
+	          <a class="navbar-brand" href="index.html">
+							<span class="logo">
+								<span class="json-site">json</span><span class="schema-site">schema</span>
+							</span>
+						</a>
+	        </div>
+	        <div id="navbar" class="navbar-collapse collapse navbar-right">
+	          <ul class="nav navbar-nav">
+							<?php
+								foreach ($menu as $text => $target) {
+									$activeClass = ($text == $pageSpec['menu']) ? "active":"";
+									echo "<li class=\"$activeClass\"><a href=\"$target\">$text</a></li>";
+								}
+							?>
+	          </ul>
+	        </div><!--/.nav-collapse -->
+	      </div>
+	    </nav>
+
+      <div class="container" role="main">
 				<?php
 					readfile($pageSpec['content']);
 				?>
 			</div>
-		</div>
-		<script src="style/js/json-highlight.js"></script>
-		<script src="style/js/show-hide.js"></script>
+
+		<footer class="footer">
+      <div class="container">
+        <p class="text-muted">The home of JSON Schema.</p>
+      </div>
+    </footer>
+
+		<script src="lib/js/jquery.min.js"></script>
+		<script src="lib/js/bootstrap.min.js"></script>
+		<script src="lib/js/json-highlight.js"></script>
+		<script src="lib/js/show-hide.js"></script>
 	</body>
 </html>
 <?php
