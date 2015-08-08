@@ -10,12 +10,76 @@
 	<div class="col-sm-12">
 		<div class="panel panel-success">
 			<div class="panel-heading">JSON Schema</div>
-			<div class="panel-body">Describes your JSON data format.</div>
+			<div class="panel-body">Describes your JSON data format. Here is a basic example of a JSON Schema:
+				<p>
+					<pre class="json-schema">
+{
+	"title": "Example Schema",
+	"type": "object",
+	"properties": {
+		"firstName": {
+			"type": "string"
+		},
+		"lastName": {
+			"type": "string"
+		},
+		"age": {
+			"description": "Age in years",
+			"type": "integer",
+			"minimum": 0
+		}
+	},
+	"required": ["firstName", "lastName"]
+}
+					</pre>
+				</p>
+			</div>
 		</div>
 
 		<div class="panel panel-success">
 			<div class="panel-heading">JSON Hyper-Schema</div>
-			<div class="panel-body">Turns your JSON data into hyper-text.</div>
+			<div class="panel-body">Turns your JSON data into hyper-text. Here is a basic example of a JSON Hyper-Schema:
+				<p>
+					<pre class="json-schema">
+{
+	"title": "Written Article",
+	"type": "object",
+	"properties": {
+		"id": {
+			"title": "Article Identifier",
+			"type": "number"
+		},
+		"title": {
+			"title": "Article Title",
+			"type": "string"
+		},
+		"authorId": {
+			"type": "integer"
+		},
+		"imgData": {
+			"title": "Article Illustration (small)",
+			"type": "string",
+			"media": {
+				"binaryEncoding": "base64",
+				"type": "image/png"
+			}
+		}
+	},
+	"required" : ["id", "title", "authorId"],
+	"links": [
+		{
+			"rel": "full",
+			"href": "{id}"
+		},
+		{
+			"rel": "author",
+			"href": "/user?id={authorId}"
+		}
+	]
+}
+					</pre>
+				</p>
+			</div>
 		</div>
 	</div>
 </div>
@@ -56,7 +120,7 @@
 					<li>Read the <a href="documentation.html">specification</a></li>
 					<li>View some <a href="examples.html">examples</a></li>
 					<li>Check out this <a href="http://spacetelescope.github.io/understanding-json-schema/">excellent guide</a> for schema authors, from the <a href="http://www.stsci.edu/">Space Telescope Science Institute</a>
-					<li>The growing list of <a href="implementations.html">JSON (Hyper-)Schema software</a></li>
+						<li>The growing list of <a href="implementations.html">JSON (Hyper-)Schema software</a></li>
 				</ul>
 			</div>
 		</div>
