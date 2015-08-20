@@ -1,15 +1,16 @@
+
 <html>
 	<head>
 		<title>JSON Schema Software</title>
-		<link href="style/css/green-theme.css" rel="stylesheet">
-		<link rel="stylesheet" href="style/css/json-highlight.css">
+		<link rel="stylesheet" href="style/css/green-theme.css"  />
+		<link rel="stylesheet" href="style/css/json-highlight.css" />
 		<script type="text/javascript">
 			var _gaq = _gaq || [];
 			var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
 			_gaq.push(['_require', 'inpage_linkid', pluginUrl]);
 			_gaq.push(['_setAccount', 'UA-37169005-1']);
 			_gaq.push(['_trackPageview']);
-
+			
 			(function() {
 				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
@@ -19,12 +20,12 @@
 	</head>
 	<body>
 		<script src="style/js/jquery.js"></script>
-		<div class="page-container" align=center>
+		<div class="page-container" align="center">
 			<div class="page-header">
 				<h1>json-schema.org</h1>
 				<div class="tagline">The home of JSON Schema</div>
 			</div>
-
+			
 			<div class="page-content">
 				<div class="page-menu">
 				<a href=".">about</a> <a href="documentation.html">docs</a> <a href="examples.html">examples</a> <a class="selected" href="implementations.html">software</a> 				</div>
@@ -35,15 +36,16 @@
 
 	<p>Implementations below are classified based on their functionality.  When known, the
 	license of the project is also mentioned.</p>
+	
+	<p>If you have updates to this list, look at the <a href="https://github.com/json-schema/json-schema">GitHub repo</a>
+	under the <a>gh-pages</a> branch.</p>
 </div>
 
 <div class="show-hide" data-target="validator-list"></div>
-<h2>Validators (32)</h2>
+<h2>Validators (25)</h2>
 <div class="block" id="validator-list">
 	<h3>JavaScript</h3>
 	<ul>
-		<li><a id="link-impl-jsen" href="https://github.com/bugventure/jsen">JSEN</a> - <em>supports version 4</em> (MIT)</li>
-		<li><a id="link-impl-ajv" href="https://github.com/epoberezkin/ajv">ajv</a> - <em>supports version 4</em> (MIT)</li>
 		<li><a id="link-impl-is-my-json-valid" href="https://github.com/mafintosh/is-my-json-valid">is-my-json-valid</a> - <em>supports version 4</em> (MIT)</li>
 		<li><a id="link-impl-tv4" href="http://geraintluff.github.com/tv4/">tv4</a> - <em>supports version 4</em> (Public Domain)</li>
 		<li><a id="link-impl-jayschema" href="https://github.com/natesilva/jayschema">JaySchema</a> for Node.js - <em>supports version 4</em> (BSD)</li>
@@ -53,7 +55,7 @@
 		<li><a id="link-impl-kriszyp-jsonschema" href="http://github.com/kriszyp/json-schema">json-schema</a> (AFL or BSD) as part of <a id="link-impl-persvr" href="http://www.persvr.org/">Persevere</a></li>
 		<li><a id="link-impl-schema-js" href="https://github.com/akidee/schema.js">schema.js</a> (MIT)</li>
 		<li><a id="link-impl-json-gate" href="https://github.com/oferei/json-gate">json-gate</a> (MIT)</li>
-		<li><a id="link-impl-jjv" href="https://github.com/acornejo/jjv">JJV</a> for Node.js and the browser - <em>supports version 4</em>(MIT)</li>
+        <li><a id="link-impl-jsen" href="https://github.com/bugventure/jsen">JSEN</a> for Node.js - <em>supports version 4</em> (MIT)</li>
 	</ul>
 
 	<h3>Java</h3>
@@ -65,20 +67,12 @@
 	<ul>
 		<li><a id="link-impl-jsonschema" href="https://github.com/Julian/jsonschema">jsonschema</a> - <em>supports version 4</em> (MIT)</li>
 		<li><a id="link-impl-zyga-json-schema-validator" href="https://github.com/zyga/json-schema-validator">json-schema-validator</a> (LGPL)</li>
-		<li><a id="link-impl-johnoone-json-spec" href="https://github.com/johnnoone/json-spec">json-spec</a> cli and python library - <em>supports version 3 and 4</em> (BSD)</li>
-	</ul>
-
-	<h3>Online (web tool)</h3>
-	<ul>
-		<li><a href="http://www.jsonschemavalidator.net/">jsonschemavalidator.net</a> - interactive online schema validator - <em>supports version 3 and 4</em></li>
 	</ul>
 
 	<h3>Ruby</h3>
 	<ul>
 		<li><a id="link-impl-ruby-jsonchema" href="https://github.com/Constellation/ruby-jsonchema">ruby-jsonschema</a> (MIT)</li>
 		<li><a id="link-impl-ruby-hoxworth-json-schema" href="https://github.com/hoxworth/json-schema">json-schema</a> - <em>supports version 4</em> (MIT)</li>
-		<li><a id="link-impl-ruby-jschema" href="https://github.com/Soylent/jschema">JSchema</a> - <em>supports version 4</em> (MIT)</li>
-		<li><a id="link-impl-validators-brandur-json-schema" href="https://github.com/brandur/json_schema">json_schema</a> <em>supports version 4 and hyperschema</em> (MIT)</li>
 	</ul>
 
 	<h3>Perl</h3>
@@ -91,7 +85,6 @@
 		<li><a id="link-impl-jsv4-php" href="https://github.com/geraintluff/jsv4-php">jsv4-php</a> - <em>supports version 4</em>  (Public Domain / MIT)</li>
 		<li><a id="link-impl-php-json-schema" href="https://github.com/hasbridge/php-json-schema">php-json-schema</a> (MIT)</li>
 		<li><a id="link-impl-json-schema" href="https://github.com/justinrainbow/json-schema">json-schema</a> (Berkeley)</li>
-		<li><a id="link-impl-jvalidator" href="https://github.com/brainly/jvalidator">jvalidator</a> (BSD3)</li>
 	</ul>
 
 	<h3>.NET</h3>
@@ -109,14 +102,10 @@
 		<li><a id="link-impl-wjelement" href="https://github.com/netmail-open/wjelement">WJElement</a> (LGPLv3)</li>
 	</ul>
 
-	<h3>C++</h3>
-	<ul>
-		<li><a id="link-impl-libvariant" href="https://bitbucket.org/gallen/libvariant">LibVariant</a> (LGPLv2)</li>
-	</ul>
-
 	<h3>Haskell</h3>
 	<ul>
 		<li><a id="link-impl-aeson-schema" href="https://github.com/timjb/aeson-schema">aeson-schema</a> (MIT)</li>
+		<li><a id="link-impl-hjsonschema" href="https://github.com/seagreen/hjsonschema">hjsonschema</a> - <em>supports version 4</em> (MIT)</li>
 	</ul>
 
 	<h3>Erlang</h3>
@@ -128,9 +117,10 @@
 	<ul>
 		<li><a id="link-impl-gojsonschema" href="https://github.com/sigu-399/gojsonschema">gojsonschema</a> (Apache 2.0)</li>
 	</ul>
-	<h3>Objective-C</h3>
+
+	<h3>Online (web tool)</h3>
 	<ul>
-		<li><a id="link-impl-kitejsonvalidator" href="https://github.com/samskiter/KiteJSONValidator">KiteJSONValidator</a> (MIT)</li>
+		<li><a id="link-impl-schemastore" href="http://schemastore.org/validator/">SchemaStore.org</a> - validate against common JSON Schemas</li>
 	</ul>
 </div>
 
@@ -161,11 +151,6 @@
 	<ul>
 		<li><a id="link-impl-jsl" href="https://github.com/aromanovich/jsl">JSL</a> (BSD) - a Python DSL for defining JSON Schemas</li>
 	</ul>
-
-	<h3>Java</h3>
-	<ul>
-		<li><a id="link-impl-java" href="https://github.com/FasterXML/jackson-module-jsonSchema">Jackson JSON Schema Module</a> - (Apache 2.0)</li>
-	</ul>
 </div>
 
 <div class="show-hide" data-target="parsing-list"></div>
@@ -183,24 +168,12 @@
 </div>
 
 <div class="show-hide" data-target="ui-tools-list"></div>
-<h2>UI generation (3)</h2>
+<h2>UI generation (2)</h2>
 <div class="block" id="ui-tools-list">
 	<h3>JavaScript</h3>
 	<ul>
 		<li><a id="link-impl-jsonary" href="http://jsonary.com/">Jsonary</a> - <em>supports version 4</em> (MIT)</li>
-		<li><a id="link-impl-json-editor" href="https://github.com/jdorn/json-editor">JSON Editor</a> - <em>supports version 4</em> (MIT)</li>
 		<li><a id="link-impl-metawidget" href="http://metawidget.org/">Metawidget</a> (LGPL)</li>
-	</ul>
-</div>
-
-<div class="show-hide" data-target="editors-list"></div>
-<h2>Editors (2)</h2>
-<div class="block" id="editors-list">
-	<h3>Integration</h3>
-	<ul>
-		<li><a id="link-impl-visualstudio" href="http://www.visualstudio.com/">Visual Studio 2013</a> - <em>Auto-completion and tooltips based on JSON schema v3 and v4</em></li>
-        <li><a id="link-impl-jsonbuddy" href="http://www.json-buddy.com/">JSONBuddy</a> - <em>Grid-style JSON editor and context sensitive entry-helpers based on JSON schema</em></li>
-        <li><a id="link-impl-vim" href="https://github.com/Quramy/vison">Vim</a> - <em>Omnicomplete provider for editing json file Vim based on JSON schema</em></li>
 	</ul>
 </div>
 
@@ -214,32 +187,22 @@
 </div>
 
 <div class="show-hide" data-target="hyper-tools-list"></div>
-<h2>Hyper-schema handling (2)</h2>
+<h2>Hyper-schema handling (1)</h2>
 <div class="block" id="hyper-tools-list">
 	<h3>JavaScript</h3>
 	<ul>
 		<li><a id="link-impl-jsonary" href="http://jsonary.com/">Jsonary</a> - <em>supports version 4</em> (MIT)</li>
 	</ul>
-
-  <h3>Ruby</h3>
-  <ul>
-    <li><a id="link-impl-hyper-brandur-json-schema" href="https://github.com/brandur/json_schema">json_schema</a> <em>supports version 4 and hyperschema</em> (MIT)</li>
-  </ul>
 </div>
 
 <div class="show-hide" data-target="documentation-list"></div>
-<h2>Documentation generation (3)</h2>
+<h2>Documentation generation (2)</h2>
 <div class="block" id="documentation-list">
 	<h3>JavaScript</h3>
 	<ul>
 		<li><a id="link-impl-matic" href="https://github.com/mattyod/matic">Matic</a> (MIT)</li>
 		<li><a id="link-impl-docson" href="https://github.com/lbovet/docson">Docson</a> (Apache 2.0)</li>
 	</ul>
-
-  <h3>Ruby</h3>
-  <ul>
-    <li><a id="link-impl-prmd" href="https://github.com/interagent/prmd">prmd</a> (MIT)</li>
-  </ul>
 </div>
 
 <div class="show-hide" data-target="other-list"></div>

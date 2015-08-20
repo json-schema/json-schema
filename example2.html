@@ -2,15 +2,15 @@
 <html>
 	<head>
 		<title>JSON Schema - Advanced Example</title>
-		<link href="style/css/green-theme.css" rel="stylesheet">
-		<link rel="stylesheet" href="style/css/json-highlight.css"></link>
+		<link rel="stylesheet" href="style/css/green-theme.css"  />
+		<link rel="stylesheet" href="style/css/json-highlight.css" />
 		<script type="text/javascript">
 			var _gaq = _gaq || [];
 			var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
 			_gaq.push(['_require', 'inpage_linkid', pluginUrl]);
 			_gaq.push(['_setAccount', 'UA-37169005-1']);
 			_gaq.push(['_trackPageview']);
-
+			
 			(function() {
 				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
@@ -20,12 +20,12 @@
 	</head>
 	<body>
 		<script src="style/js/jquery.js"></script>
-		<div class="page-container" align=center>
+		<div class="page-container" align="center">
 			<div class="page-header">
 				<h1>json-schema.org</h1>
 				<div class="tagline">The home of JSON Schema</div>
 			</div>
-
+			
 			<div class="page-content">
 				<div class="page-menu">
 				<a href=".">about</a> <a href="documentation.html">docs</a> <a class="selected" href="examples.html">examples</a> <a href="implementations.html">software</a> 				</div>
@@ -35,8 +35,8 @@
     <p>This example shows a possible JSON representation of a hypothetical machine's mount points as
     represented in an <code>/etc/fstab</code> file.</p>
 
-    <p>An entry in the fstab file can have many different forms. Here is a possible representation of a
-    full fstab:</p>
+    <p>An entry in the <code>fstab</code> file can have many different forms. Here is a possible representation of a
+    full <code>fstab</code>:</p>
 
 <pre class="json">
 {
@@ -88,7 +88,7 @@
     </ul>
 
     <p>We also want the schema to be regarded as a draft v4 schema, we must therefore specify
-    <em>$schema</em>:</p>
+    <var>$schema</var>:</p>
 
 <pre class="json-schema">
 {
@@ -108,16 +108,16 @@
     <p>Note how the valid paths constraint is enforced here:</p>
 
     <ul>
-        <li>we have a <em>properties</em> keyword with only a <code>/</code> entry;</li>
-        <li>we use <em>patternProperties</em> to match other property names via a regular
+        <li>we have a <var>properties</var> keyword with only a <code>/</code> entry;</li>
+        <li>we use <var>patternProperties</var> to match other property names via a regular
         expression (note that it does not match <code>/</code>);</li>
-        <li>as <em>additionalProperties</em> is false, it constrains object properties to be either
+        <li>as <var>additionalProperties</var> is false, it constrains object properties to be either
         <code>/</code> or to match the regular expression.</li>
     </ul>
 
     <p>You will notice that the regular expression is explicitly anchored (with <code>^</code> and
-    <code>$</code>): in JSON Schema, regular expressions (in <em>patternProperties</em> and in
-    <em>pattern</em>) are not anchored by default.</p>
+    <code>$</code>): in JSON Schema, regular expressions (in <var>patternProperties</var> and in
+    <var>pattern</var>) are not anchored by default.</p>
 
     <p>For now, the schemas describing individual entries are empty: we will start describing the
     constraints in the following paragraphs, using another schema, which we will reference from the main
@@ -158,26 +158,26 @@
     <p>You should already be familiar with some of the constraints:</p>
 
     <ul>
-        <li>an fstab entry must be an object (<code>"type": "object"</code>);</li>
-        <li>it must have one property with name <em>storage</em> (<code>"required": [ "storage" ]</code>);</li>
-        <li>the <em>storage</em> property must also be an object.</li>
+        <li>an <code>fstab</code> entry must be an object (<code>"type": "object"</code>);</li>
+        <li>it must have one property with name <var>storage</var> (<code>"required": [ "storage" ]</code>);</li>
+        <li>the <var>storage</var> property must also be an object.</li>
     </ul>
 
     <p>There are a couple of novelties:</p>
 
     <ul>
-        <li>you will notice the appearance of JSON References, via the <em>$ref</em> keyword; here, all
+        <li>you will notice the appearance of JSON References, via the <var>$ref</var> keyword; here, all
         references used are local to the schema, and the fragment part is a URI encoded JSON Pointer;</li>
-        <li>you will notice the appearance of an <em>id</em>: this is the URI of this resource; we assume
+        <li>you will notice the appearance of an <var>id</var>: this is the URI of this resource; we assume
         here that this URI is the actual URI of this schema;</li>
-        <li>the <em>oneOf</em> keyword is new in draft v4; its value is an array of
+        <li>the <var>oneOf</var> keyword is new in draft v4; its value is an array of
         schemas, and an instance is valid if and only if it is valid against exactly one
         of these schemas;</li>
-        <li>finally, the <em>definitions</em> keyword is a standardized placeholder in which you can define
+        <li>finally, the <var>definitions</var> keyword is a standardized placeholder in which you can define
         inline subschemas to be used in a schema.</li>
     </ul>
 
-    <h3>The <em>fstype</em>, <em>options</em> and <em>readonly</em> properties</h3>
+    <h3>The <var>fstype</var>, <var>options</var> and <var>readonly</var> properties</h3>
 </div>
 
 <h2>The entry schema - adding constraints</h2>
@@ -188,9 +188,9 @@
     <ul>
         <li>we will pretend that we only support <code>ext3</code>, <code>ext4</code> and <code>btrfs</code> as
         filesystem types;</li>
-        <li><em>options</em> must be an array, and the items in this array must be strings; moreover, there
+        <li><var>options</var> must be an array, and the items in this array must be strings; moreover, there
         must be at least one item, and all items should be unique;</li>
-        <li><em>readonly</em> must be a boolean.</li>
+        <li><var>readonly</var> must be a boolean.</li>
     </ul>
 
     <p>With these added constraints, the schema now looks like this:</p>
@@ -236,10 +236,10 @@
     schemas for individual definitions below, and fill these schemas into the entry schema.</p>
 </div>
 
-<h2>The <em>diskDevice</em> storage type</h2>
+<h2>The <var>diskDevice</var> storage type</h2>
 <div class="block">
-    <p>This storage type has two required properties, <em>type</em> and <em>device</em>. The type can
-    only be <em>disk</em>, and the device must be an absolute path starting with <em>/dev</em>. No other
+    <p>This storage type has two required properties, <var>type</var> and <var>device</var>. The type can
+    only be <var>disk</var>, and the device must be an absolute path starting with <var>/dev</var>. No other
     properties are allowed:</p>
 
 <pre class="json-schema">
@@ -256,15 +256,15 @@
 }
 </pre>
 
-    <p>You will have noted that we need not specify that <em>type</em> must be a string: the constraint
-    described by <em>enum</em> is enough.</p>
+    <p>You will have noted that we need not specify that <var>type</var> must be a string: the constraint
+    described by <var>enum</var> is enough.</p>
 </div>
 
-<h2>The <em>diskUUID</em> storage type</h2>
+<h2>The <var>diskUUID</var> storage type</h2>
 <div class="block">
 
-    <p>This storage type has two required properties, <em>type</em> and <em>label</em>. The type can
-    only be <em>disk</em>, and the label must be a valid UUID. No other properties are allowed:</p>
+    <p>This storage type has two required properties, <var>type</var> and <var>label</var>. The type can
+    only be <var>disk</var>, and the label must be a valid UUID. No other properties are allowed:</p>
 
 <pre class="json-schema">
 {
@@ -281,14 +281,14 @@
 </pre>
 </div>
 
-<h2>The <em>nfs</em> storage type</h2>
+<h2>The <var>nfs</var> storage type</h2>
 <div class="block">
-    <p>This storage type has three required properties: <em>type</em>, <em>server</em> and
-    <em>remotePath</em>. What is more, the server may be either a host name, an IPv4 address or an IPv6
+    <p>This storage type has three required properties: <var>type</var>, <var>server</var> and
+    <var>remotePath</var>. What is more, the server may be either a host name, an IPv4 address or an IPv6
     address.</p>
 
-    <p>For the constraints on <em>server</em>, we use a new keyword: <em>format</em>. While it is not
-    required that <em>format</em> be supported, we will suppose that it is here:</p>
+    <p>For the constraints on <var>server</var>, we use a new keyword: <var>format</var>. While it is not
+    required that <var>format</var> be supported, we will suppose that it is here:</p>
 
 <pre class="json-schema">
 {
@@ -313,9 +313,9 @@
 </pre>
 </div>
 
-<h2>The <em>tmpfs</em> storage type</h2>
+<h2>The <var>tmpfs</var> storage type</h2>
 <div class="block">
-    <p>This storage type has two required properties: <em>type</em> and <em>sizeInMB</em>. The size can
+    <p>This storage type has two required properties: <var>type</var> and <var>sizeInMB</var>. The size can
     only be an integer. What is more, we will require that the size be between 16 and 512,
     inclusive:</p>
 
@@ -338,7 +338,7 @@
 <h2>The full entry schema</h2>
 <div class="block">
     <p>The resulting schema is quite large:</p>
-    <div class="show-hide" data-target="full-entry-schema"></div><br>
+    <div class="show-hide" data-target="full-entry-schema"></div><br />
 
 <pre class="json-schema" id="full-entry-schema">
 {
@@ -482,15 +482,14 @@
     have written here has some features which can be problematic for portability:</p>
 
     <ul>
-    <li><em>format</em> support is optional, and as such other tools may ignore this keyword: this can
+    <li><var>format</var> support is optional, and as such other tools may ignore this keyword: this can
     lead to a different validation outcome for the same data;</li>
     <li>it uses regular expressions: care should be taken not to use any advanced features (such as
     lookarounds), since they may not be supported at the other end;</li>
-    <li>it uses <em>$schema</em> to express the need to use draft v4 syntax, but not all tools support
+    <li>it uses <var>$schema</var> to express the need to use draft v4 syntax, but not all tools support
     draft v4 (in fact, most don't support it).</li>
     </ul>
 </div>
-
 			</div>
 		</div>
 		<script src="style/js/json-highlight.js"></script>
