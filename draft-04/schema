@@ -68,14 +68,14 @@
             "format": "regex"
         },
         "additionalItems": {
-            "anyOf": [
+            "oneOf": [
                 { "type": "boolean" },
                 { "$ref": "#" }
             ],
             "default": {}
         },
         "items": {
-            "anyOf": [
+            "oneOf": [
                 { "$ref": "#" },
                 { "$ref": "#/definitions/schemaArray" }
             ],
@@ -91,7 +91,7 @@
         "minProperties": { "$ref": "#/definitions/positiveIntegerDefault0" },
         "required": { "$ref": "#/definitions/stringArray" },
         "additionalProperties": {
-            "anyOf": [
+            "oneOf": [
                 { "type": "boolean" },
                 { "$ref": "#" }
             ],
@@ -115,7 +115,7 @@
         "dependencies": {
             "type": "object",
             "additionalProperties": {
-                "anyOf": [
+                "oneOf": [
                     { "$ref": "#" },
                     { "$ref": "#/definitions/stringArray" }
                 ]
@@ -127,7 +127,7 @@
             "uniqueItems": true
         },
         "type": {
-            "anyOf": [
+            "oneOf": [
                 { "$ref": "#/definitions/simpleTypes" },
                 {
                     "type": "array",
