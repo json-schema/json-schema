@@ -219,7 +219,7 @@
                     <artwork>
 <![CDATA[
 Content-Type: application/my-media-type+json;
-              profile=http://json.com/my-hyper-schema
+              profile="http://json.com/my-hyper-schema"
 ]]>
                     </artwork>
                 </figure>
